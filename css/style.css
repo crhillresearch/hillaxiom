@@ -151,6 +151,17 @@ section { padding: 1.8rem 0 2.4rem; }
   vertical-align: 2px;
   margin-left: 0.4rem;
 }
+.msc-code {
+  font-family: var(--sans);
+  font-weight: 200;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--dim);
+  background: var(--bg-inset);
+  padding: 0.15rem 0.45rem;
+  vertical-align: 2px;
+  margin-left: 0.4rem;
+}
 .status {
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -360,14 +371,23 @@ section { padding: 1.8rem 0 2.4rem; }
 }
 .paper-title a { color: var(--fg); }
 .paper-title a:hover { color: var(--accent-text); text-decoration: none; }
+.paper-desc {
+  color: var(--fg-soft);
+  font-size: 0.89rem;
+  margin-bottom: 0.1rem;
+  font-style: italic;
+}
 .paper-meta {
   color: var(--dim);
   font-size: 0.78rem;
+  margin-top: 0.2rem;
 }
+.paper-meta::before { content: ">"; color: var(--accent); font-weight: 400; }
 .paper-links {
   display: flex;
+  flex-direction: column; 
   gap: 0.4rem;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 0.2rem;
 }
 .paper-links a {
@@ -379,6 +399,8 @@ section { padding: 1.8rem 0 2.4rem; }
   padding: 0.2rem 0.55rem;
   white-space: nowrap;
   transition: all .15s;
+  text-align: center;
+  width: 4.5rem;
 }
 .paper-links a:hover {
   color: var(--accent-text);
@@ -386,6 +408,35 @@ section { padding: 1.8rem 0 2.4rem; }
   text-decoration: none;
 }
 .arxiv-id { color: var(--dim); font-weight: 400; }
+
+/* paper subgroups */
+.paper-group { margin-bottom: 1.8rem; }
+.paper-group:last-child { margin-bottom: 0; }
+
+.group-header {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.4rem;
+}
+.group-header::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--dim);
+  margin-right: 0.5rem;
+}
+
+.group-header.diophantine::before {
+  content: "\f1e0"; /* fa-share-nodes */
+}
+.group-header.rst::before {
+  content: "\f1e0"; /* fa-share-nodes */
+}
 
 /* ---------- about ---------- */
 .about-grid {

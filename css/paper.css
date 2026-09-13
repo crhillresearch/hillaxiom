@@ -1,0 +1,240 @@
+/* =========================================================
+   paper.css — formatting for LaTeX-derived paper content
+   scoped under .paper-page so index.html is unaffected
+   ========================================================= */
+
+.paper-page {
+  /* serif face tuned for math-adjacent reading */
+  --paper-font: "STIX Two Text", "Source Serif 4", Georgia, serif;
+}
+
+/* ---------- document header ---------- */
+.paper-content {
+  font-family: var(--paper-font);
+  font-size: 1.02rem;
+  line-height: 1.85;
+  padding: 2.8rem 0 1rem;
+  color: var(--fg);
+  text-align: justify;
+  hyphens: auto;
+}
+
+.paper-doc-title {
+  font-family: var(--paper-font);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.3;
+  text-align: center;
+  margin: 0 0 0.6rem;
+}
+
+.paper-doc-authors {
+  text-align: center;
+  color: var(--fg-soft);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+/* ---------- abstract ---------- */
+.paper-abstract {
+  margin: 0 2.5rem 2.5rem;
+  padding: 0.2rem 0;
+  font-size: 0.94rem;
+  color: var(--fg-soft);
+  border-left: 2px solid var(--accent-dark);
+  padding-left: 1.2rem;
+}
+.abstract-label {
+  font-weight: 600;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  color: var(--fg);
+  margin-right: 0.4rem;
+}
+
+/* ---------- headings (LaTeX \section, \subsection) ---------- */
+.paper-content h2 {
+  font-family: var(--paper-font);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: 2.4rem 0 0.9rem;
+  text-align: left;
+}
+.paper-content h3 {
+  font-family: var(--paper-font);
+  font-weight: 600;
+  font-size: 1.08rem;
+  font-style: italic;
+  margin: 1.8rem 0 0.7rem;
+  text-align: left;
+}
+.paper-content h4 {
+  font-family: var(--paper-font);
+  font-weight: 400;
+  font-size: 1.02rem;
+  font-style: italic;
+  margin: 1.4rem 0 0.5rem;
+  text-align: left;
+}
+
+/* ---------- paragraphs ---------- */
+.paper-content p { margin: 0 0 1rem; }
+
+/* ---------- math ---------- */
+/* MathJax display math: centered, breathing room */
+mjx-container[display="true"] {
+  margin: 1.2rem 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+/* keep long equations scrollable, not clipped */
+.paper-content { overflow-wrap: normal; }
+
+/* ---------- theorem-like environments (pandoc classes) ---------- */
+.paper-content .theorem,
+.paper-content .lemma,
+.paper-content .proposition,
+.paper-content .corollary,
+.paper-content .definition,
+.paper-content .example,
+.paper-content .remark,
+.paper-content .conjecture {
+  margin: 1.4rem 0;
+  padding: 0.8rem 1.2rem;
+  background: var(--bg-raised);
+  border-left: 3px solid var(--accent-dark);
+  font-style: italic;
+}
+.paper-content .definition { font-style: normal; }
+
+.paper-content .theorem-label,
+.paper-content .lemma-label,
+.paper-content .proposition-label,
+.paper-content .corollary-label,
+.paper-content .definition-label,
+.paper-content .example-label,
+.paper-content .remark-label,
+.paper-content .conjecture-label,
+.paper-content .proof-label {
+  font-style: normal;
+  font-weight: 600;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin-right: 0.45rem;
+}
+
+/* ---------- proof ---------- */
+.paper-content .proof {
+  margin: 0.8rem 0 1.4rem;
+  padding-left: 1.2rem;
+  font-size: 0.97rem;
+}
+.qed {
+  float: right;
+  color: var(--accent);
+}
+
+/* ---------- lists ---------- */
+.paper-content ul,
+.paper-content ol { margin: 0 0 1rem 2rem; }
+.paper-content li { margin-bottom: 0.3rem; }
+
+/* ---------- blockquote (LaTeX quote env) ---------- */
+.paper-content blockquote {
+  margin: 1.2rem 2rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--border);
+  color: var(--fg-soft);
+  font-style: italic;
+}
+
+/* ---------- figures & tables ---------- */
+.paper-content figure {
+  margin: 1.8rem 0;
+  text-align: center;
+}
+.paper-content figcaption,
+.paper-content .caption {
+  font-size: 0.82rem;
+  color: var(--dim);
+  margin-top: 0.6rem;
+  text-align: center;
+  font-style: italic;
+}
+.paper-content img { max-width: 100%; }
+
+.paper-content table {
+  border-collapse: collapse;
+  margin: 1.8rem auto;
+  font-size: 0.9rem;
+}
+.paper-content th,
+.paper-content td {
+  padding: 0.4rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.paper-content th {
+  font-weight: 600;
+  font-variant: small-caps;
+  border-bottom: 2px solid var(--grey);
+}
+
+/* ---------- footnotes / references ---------- */
+.paper-content .footnotes,
+.paper-content .references {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--fg-soft);
+  line-height: 1.7;
+}
+.paper-content .footnotes h2,
+.paper-content .references h2 {
+  font-size: 1rem;
+  font-variant: small-caps;
+  font-style: normal;
+}
+
+/* ---------- footer + back-to-top ---------- */
+.paper-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 0 2.2rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--dim);
+  font-size: 0.78rem;
+}
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid var(--border);
+  color: var(--fg-soft);
+  transition: all .15s;
+}
+.back-to-top:hover {
+  color: var(--accent);
+  border-color: var(--accent-dark);
+}
+
+/* ---------- print: papers get printed ---------- */
+@media print {
+  body { background: #fff; color: #000; }
+  header, .paper-footer { display: none; }
+  .paper-content { color: #000; text-align: justify; }
+  .paper-abstract { color: #333; }
+  .paper-content .theorem { background: none; border-left-color: #000; }
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 600px) {
+  .paper-abstract { margin: 0 0 2rem; }
+  .paper-content { font-size: 0.97rem; text-align: left; }
+}

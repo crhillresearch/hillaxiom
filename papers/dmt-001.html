@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Regularity-Selected Generic Rank at Least Four in the Piezas Diophantine Sextuple · hillaxiom</title><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="../css/style.css" rel="stylesheet"/><link href="../css/paper.css" rel="stylesheet"/><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    tags: 'ams'
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+};</script><script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body class="paper-page" id="top"><div class="container"><header><div class="masthead"><a class="site-name" href="../index.html">hillaxiom</a></div><nav><a href="../pdf/dmt-001.pdf" rel="noopener" target="_blank"><i class="fa-solid fa-file-pdf"></i> Download PDF</a><a href="https://www.paper2audio.com/d/CQjoa77s" rel="noopener" target="_blank"><i class="fa-solid fa-headphones"></i> Listen to Audio</a></nav></header><main class="paper-content"><h1 class="paper-doc-title">Regularity-Selected Generic Rank at Least Four<br/>in the Piezas Diophantine Sextuple</h1><p class="paper-doc-authors">C. R. Hill · September 12, 2026</p><div class="paper-abstract"><span class="abstract-label">Abstract.</span> We study the one-parameter Piezas rational Diophantine sextuple over ℚ(t). Its regularity identities select six of the twenty triple classes; for each selected class, four explicit rational sections are proved independent by specialization at t = 12/5 using rigorous canonical-height Gram certificates, yielding generic Mordell–Weil rank at least four.</div><h2 id="introduction">1. Introduction</h2><p>A rational Diophantine <span class="math inline">\(m\)</span>-tuple
+is a set of distinct nonzero rational numbers such that the product of
+any two distinct elements, increased by <span class="math inline">\(1\)</span>, is a rational square. Rational
+Diophantine sextuples exist in infinite families <span class="citation" data-cites="DKMS17">[1]</span>. The particularly simple one-parameter
+sextuple used here was given by Piezas <span class="citation" data-cites="Piezas16">[2]</span> and subsequently studied by Dujella and
+Kazalicki <span class="citation" data-cites="DK17">[3]</span>.</p><p>A rational Diophantine triple <span class="math inline">\(\{u,v,w\}\)</span> induces an elliptic curve <span class="math display">\[Y^2=(uX+1)(vX+1)(wX+1).\]</span> The use of
+rational Diophantine triples to construct elliptic curves of high rank
+has a substantial history. Dujella constructed induced families of
+generic rank at least four <span class="citation" data-cites="Dujella00">[4]</span>; Aguirre, Dujella, and Peral later
+obtained generic rank at least five <span class="citation" data-cites="ADP12">[5]</span>; and Dujella and Peral constructed a
+family of generic rank at least seven <span class="citation" data-cites="DP20">[6]</span>. Thus generic rank at least four is not
+itself the new feature of the present result.</p><p>Regular substructures inside rational Diophantine sextuples have also
+been studied previously. Dujella, Kazalicki, and Petričević constructed
+infinite families containing regular quadruples and regular quintuples
+<span class="citation" data-cites="DKP21">[7]</span>. More recently,
+Zeng studied regular extensions and compatibility for standard
+parametric rational Diophantine sextuples over <span class="math inline">\(\mathbb{Q}(t)\)</span> <span class="citation" data-cites="Zeng26">[8]</span>.</p><p>The contribution here is the link between the internal regularity
+structure of the Piezas sextuple and the ranks of elliptic curves
+induced by its three-element subfamilies. The regularity identities
+themselves are not claimed as new. What is proved here is that their
+incidence pattern selects six specific triple classes from the twenty
+available three-element subfamilies, and that each selected class
+carries four independent rational sections over <span class="math inline">\(\mathbb{Q}(t)\)</span>. Thus the theorem gives a
+regularity-indexed generic rank lower bound for these six induced
+elliptic-curve families.</p><p>The proof has two parts. First, five exact regularity identities
+produce a small incidence graph that selects six distinguished triples.
+Second, each selected triple is shown to carry four rational sections.
+Their independence is certified at the common good specialization <span class="math display">\[t=\frac{12}{5}\]</span> by positive-definite
+canonical-height Gram matrices. Only persistence of a section relation
+under good specialization is used; injectivity of the full
+specialization homomorphism is not required.</p><h2 id="the-piezas-family-and-its-regularity-graph">2. The Piezas family
+and its regularity graph</h2><p>Let <span class="math display">\[\begin{align*}
+a={}&amp;\frac{(t^2-2t-1)(t^2+2t+3)(3t^2-2t+1)}{4t(t^2-1)(t^2+2t-1)},\\
+b={}&amp;\frac{4t(t^2-1)(t^2-2t-1)}{(t^2+2t-1)^3},\\
+c={}&amp;\frac{4t(t^2-1)(t^2+2t-1)}{(t^2-2t-1)^3},\\
+d={}&amp;\frac{(t^2+2t-1)(t^2-2t+3)(3t^2+2t+1)}{4t(t^2-1)(t^2-2t-1)},\\
+e={}&amp;\frac{-t(t^2+4t+1)(t^2-4t+1)}{(t-1)(t+1)(t^2+2t-1)(t^2-2t-1)},\\
+f={}&amp;\frac{(t-1)(t+1)(3t^2-1)(t^2-3)}{4t(t^2+2t-1)(t^2-2t-1)}.
+\end{align*}\]</span> These functions form the Piezas rational
+Diophantine sextuple over <span class="math inline">\(\mathbb{Q}(t)\)</span> <span class="citation" data-cites="DK17">[3]</span>. Thus for every distinct <span class="math inline">\(i,j\in\{a,b,c,d,e,f\}\)</span> there exists <span class="math inline">\(\rho_{ij}\in\mathbb{Q}(t)\)</span> satisfying
+<span class="math display">\[\rho_{ij}^2=ij+1.\]</span> We choose one
+such square root for each unordered pair and keep that choice fixed.</p><p>We use the standard algebraic regularity tests <span class="citation" data-cites="DKP21">[7]</span>. An ordered quadruple <span class="math inline">\((p,q,r,s)\)</span> is regular when <span class="equation-anchor" id="eq:r4"></span><span class="math display">\[\begin{equation}
+\label{eq:r4}
+(p-q-r+s)^2=4(ps+1)(qr+1),
+\end{equation}\]</span> and an ordered quintuple <span class="math inline">\((p,q,r,s,z)\)</span> is regular when <span class="equation-anchor" id="eq:r5"></span><span class="math display">\[\begin{equation}
+\label{eq:r5}
+(pqrsz+2pqr+p+q+r-s-z)^2
+=4(pq+1)(pr+1)(qr+1)(sz+1).
+\end{equation}\]</span> These identities are convenient here because
+they can be checked directly in <span class="math inline">\(\mathbb{Q}(t)\)</span>; no specialization is
+involved.</p><div class="proposition" id="prop:regularity">
+<p><span class="proposition-label">Proposition 1.</span> (Regularity pattern). <em>For the
+Piezas family, the identities <a data-reference="eq:r4" data-reference-type="eqref" href="#eq:r4">(1)</a> and <a data-reference="eq:r5" data-reference-type="eqref" href="#eq:r5">(2)</a> hold identically in <span class="math inline">\(\mathbb{Q}(t)\)</span> for the ordered quadruples
+<span class="math display">\[(a,b,e,f),\qquad
+(a,d,e,f),\qquad
+(c,d,e,f),\]</span> and the ordered quintuples <span class="math display">\[(a,b,c,d,e),\qquad
+(a,b,c,d,f).\]</span></em></p>
+</div><div class="proof">
+<p><span class="proof-label">Proof.</span> The claim is an exact rational-function calculation.
+Substitute the six displayed Piezas functions into the left side minus
+the right side of <a data-reference="eq:r4" data-reference-type="eqref" href="#eq:r4">(1)</a> for <span class="math display">\[(a,b,e,f),\qquad
+(a,d,e,f),\qquad
+(c,d,e,f),\]</span> and into the corresponding residual of <a data-reference="eq:r5" data-reference-type="eqref" href="#eq:r5">(2)</a> for <span class="math display">\[(a,b,c,d,e),\qquad
+(a,b,c,d,f).\]</span> After cancellation in the fraction field <span class="math inline">\(\mathbb{Q}(t)\)</span>, all five residuals are
+zero. <span class="qed">∎</span></p>
+</div><p>For the combinatorial argument, we now forget the ordering and retain
+only the underlying label sets. The three regular quadruples share the
+pair <span class="math display">\[\{e,f\}.\]</span> Removing that pair
+leaves the two-element sets <span class="math display">\[\{a,b\},\qquad
+\{a,d\},\qquad
+\{c,d\},\]</span> which we regard as edges on the vertex set <span class="math inline">\(\{a,b,c,d\}\)</span>. Thus the resulting graph is
+the path <span class="equation-anchor" id="eq:path"></span><span class="math display">\[\begin{equation}
+\label{eq:path}
+c-d-a-b.
+\end{equation}\]</span> Its endpoints are <span class="math inline">\(b,c\)</span>, and its distance-two pairs are <span class="math inline">\(ac,bd\)</span>.</p><div class="definition" id="def:selected">
+<p><span class="definition-label">Definition 2.</span> (Regularity-selected triples). The
+regularity-selected triples are obtained in either of two ways:</p>
+<ol type="1">
+<li><p>take the special pair <span class="math inline">\(\{e,f\}\)</span> together with an endpoint of <a data-reference="eq:path" data-reference-type="eqref" href="#eq:path">(3)</a>;</p></li>
+<li><p>take one element of <span class="math inline">\(\{e,f\}\)</span>
+together with a distance-two pair of <a data-reference="eq:path" data-reference-type="eqref" href="#eq:path">(3)</a>.</p></li>
+</ol>
+<p>Thus <span class="equation-anchor" id="eq:selected"></span><span class="math display">\[\begin{equation}
+\label{eq:selected}
+\mathcal{S}_{\mathrm{P}}=\{ace,acf,bde,bdf,bef,cef\}.
+\end{equation}\]</span></p>
+</div><p>There are exactly six such triples: two of the first type and four of
+the second. This is a selection rule coming from the regularity graph.
+It does not by itself say anything about the ranks of the other fourteen
+triple classes.</p><h2 id="four-sections-on-each-selected-curve">3. Four sections on each
+selected curve</h2><p>For a Diophantine triple <span class="math inline">\(T=\{u,v,w\}\)</span>, we use the standard
+equivalent model for elliptic curves induced by Diophantine triples
+<span class="citation" data-cites="Dujella07">[9]</span>, <span class="equation-anchor" id="eq:Euvw"></span><span class="math display">\[\begin{equation}
+\label{eq:Euvw}
+E_T:\qquad y^2=(x+uv)(x+uw)(x+vw).
+\end{equation}\]</span> It is obtained from <span class="math display">\[Y^2=(uX+1)(vX+1)(wX+1)\]</span> by the change of
+variables <span class="math display">\[x=uvwX,\qquad y=uvwY.\]</span> In
+the six cases considered below, <span class="math inline">\(u,v,w\)</span> are nonzero and pairwise distinct
+as rational functions, so <a data-reference="eq:Euvw" data-reference-type="eqref" href="#eq:Euvw">(5)</a> is nonsingular over <span class="math inline">\(\mathbb{Q}(t)\)</span>.</p><p>Write <span class="math display">\[r=\rho_{uv},\qquad
+s=\rho_{uw},\qquad q=\rho_{vw},\]</span> so that <span class="math display">\[r^2=uv+1,\qquad s^2=uw+1,\qquad
+q^2=vw+1.\]</span></p><p>The standard Diophantine-triple construction gives the rational point
+<span class="citation" data-cites="Dujella07">[9]</span> <span class="equation-anchor" id="eq:P"></span><span class="math display">\[\begin{equation}
+\label{eq:P}
+P_T=(0,uvw).
+\end{equation}\]</span> The same construction gives <span class="equation-anchor" id="eq:R"></span><span class="math display">\[\begin{equation}
+\label{eq:R}
+R_T=(rs+rq+sq+1,(r+s)(r+q)(s+q)).
+\end{equation}\]</span> Direct substitution using <span class="math display">\[r^2=uv+1,\qquad s^2=uw+1,\qquad q^2=vw+1\]</span>
+verifies that <span class="math display">\[R_T\in
+E_T(\mathbb{Q}(t)).\]</span></p><p>Every fourth element <span class="math inline">\(z\)</span> from the
+ambient sextuple gives another rational point <span class="equation-anchor" id="eq:Ez"></span><span class="math display">\[\begin{equation}
+\label{eq:Ez}
+E_z=
+\bigl(
+uvwz,\,
+uvw\rho_{uz}\rho_{vz}\rho_{wz}
+\bigr)
+\in E_T(\mathbb{Q}(t)).
+\end{equation}\]</span> Indeed, substitution into <a data-reference="eq:Euvw" data-reference-type="eqref" href="#eq:Euvw">(5)</a> gives
+<span class="math display">\[(uz+1)(vz+1)(wz+1)
+=
+\rho_{uz}^2\rho_{vz}^2\rho_{wz}^2.\]</span></p><p>For the six selected triples we use the following four sections.</p><div class="center">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(T\)</span></th>
+<th style="text-align: left;">four sections</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(ace\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P_T,\ R_T,\
+E_d,\ E_f\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(acf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P_T,\ R_T,\
+E_d,\ E_e\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(bde\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P_T,\ R_T,\
+E_c,\ E_f\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(bdf\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P_T,\ R_T,\
+E_c,\ E_e\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(bef\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P_T,\ R_T,\
+E_c,\ E_d\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(cef\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P_T,\ R_T,\
+E_a,\ E_b\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="proposition" id="prop:sections">
+<p><span class="proposition-label">Proposition 3.</span> (Section identities). <em>For every
+<span class="math inline">\(T\in\mathcal{S}_{\mathrm{P}}\)</span>, the
+four sections listed above lie in <span class="math inline">\(E_T(\mathbb{Q}(t))\)</span>.</em></p>
+</div><div class="proof">
+<p><span class="proof-label">Proof.</span> The point <span class="math inline">\(P_T\)</span>
+satisfies <a data-reference="eq:Euvw" data-reference-type="eqref" href="#eq:Euvw">(5)</a> immediately.</p>
+<p>For <span class="math inline">\(R_T\)</span>, substitute <a data-reference="eq:R" data-reference-type="eqref" href="#eq:R">(7)</a> into <a data-reference="eq:Euvw" data-reference-type="eqref" href="#eq:Euvw">(5)</a> and
+use <span class="math display">\[r^2=uv+1,\qquad s^2=uw+1,\qquad
+q^2=vw+1.\]</span> The resulting residual is zero.</p>
+<p>For <span class="math inline">\(E_z\)</span>, equation <a data-reference="eq:Ez" data-reference-type="eqref" href="#eq:Ez">(8)</a> and the identities <span class="math display">\[\rho_{uz}^2=uz+1,\qquad
+\rho_{vz}^2=vz+1,\qquad
+\rho_{wz}^2=wz+1\]</span> give the curve equation directly.</p>
+<p>Thus all four listed sections have coordinates in <span class="math inline">\(\mathbb{Q}(t)\)</span> and satisfy <a data-reference="eq:Euvw" data-reference-type="eqref" href="#eq:Euvw">(5)</a> identically. <span class="qed">∎</span></p>
+</div><h2 id="sec:specialization">4. Independence from one good
+specialization</h2><p>It remains to prove that the four sections chosen for each of the six
+selected families are independent over <span class="math inline">\(\mathbb{Q}(t)\)</span>. We do this at one common
+good specialization.</p><div class="lemma" id="lem:persist">
+<p><span class="lemma-label">Lemma 4.</span> (Relation persistence). <em>Let <span class="math inline">\(E/\mathbb{Q}(t)\)</span> be an elliptic curve and
+let <span class="math inline">\(Q_1,\ldots,Q_m\in
+E(\mathbb{Q}(t))\)</span>. Suppose that <span class="math inline">\(t_0\in\mathbb{Q}\)</span> is a value at which
+<span class="math inline">\(E\)</span> specializes to a nonsingular
+elliptic curve and all <span class="math inline">\(Q_i\)</span>
+specialize to finite rational points. If <span class="math display">\[Q_1(t_0),\ldots,Q_m(t_0)\]</span> are independent
+in <span class="math inline">\(E_{t_0}(\mathbb{Q})\)</span>, then <span class="math display">\[Q_1,\ldots,Q_m\]</span> are independent in <span class="math inline">\(E(\mathbb{Q}(t))\)</span>.</em></p>
+</div><div class="proof">
+<p><span class="proof-label">Proof.</span> Any integral relation <span class="math display">\[n_1Q_1+\cdots+n_mQ_m=O\]</span> among the generic
+sections specializes at a good value <span class="math inline">\(t_0\)</span> to <span class="math display">\[n_1Q_1(t_0)+\cdots+n_mQ_m(t_0)=O.\]</span> If the
+specialized points are independent, every <span class="math inline">\(n_i\)</span> must be zero. <span class="qed">∎</span></p>
+</div><p>We use the common specialization <span class="math display">\[t_0=\frac{12}{5}.\]</span> For each <span class="math display">\[T\in\{ace,acf,bde,bdf,bef,cef\},\]</span> the
+specialized curve is nonsingular and the four sections listed in
+Section 3 specialize to finite rational points.</p><p>Their exact coordinates and the specialized curves are recorded in
+Appendix <a data-reference="app:exact-data" data-reference-type="ref" href="#app:exact-data">A</a>. Appendix <a data-reference="app:gram-data" data-reference-type="ref" href="#app:gram-data">B</a> gives
+rigorous interval enclosures for the complete <span class="math inline">\(4\times4\)</span> canonical-height Gram matrix of
+each four-point set. The certification method is described in
+Appendix <a data-reference="app:height-method" data-reference-type="ref" href="#app:height-method">C</a>.</p><p>For points <span class="math inline">\(Q_1,\ldots,Q_4\)</span>, write
+<span class="math display">\[G_T=
+\bigl(\langle Q_i,Q_j\rangle\bigr)_{1\le i,j\le4},\]</span> where <span class="math inline">\(\langle\cdot,\cdot\rangle\)</span> is the
+Néron–Tate pairing. The interval-Cholesky certificate in Appendix <a data-reference="app:gram-data" data-reference-type="ref" href="#app:gram-data">B</a> has four strictly positive pivot
+intervals for every selected class. Hence each exact matrix <span class="math inline">\(G_T\)</span> is positive definite.</p><div class="proposition" id="prop:specialized">
+<p><span class="proposition-label">Proposition 5.</span> (Specialized independence). <em>At
+<span class="math inline">\(t=12/5\)</span>, the four selected points
+are independent on each of the six curves <span class="math display">\[E_{ace},\ E_{acf},\ E_{bde},\ E_{bdf},\ E_{bef},\
+E_{cef}.\]</span></em></p>
+</div><div class="proof">
+<p><span class="proof-label">Proof.</span> For each curve, Appendix <a data-reference="app:gram-data" data-reference-type="ref" href="#app:gram-data">B</a> certifies
+that the exact canonical-height Gram matrix <span class="math inline">\(G_T\)</span> is positive definite. Therefore, for
+every nonzero <span class="math inline">\(n\in\mathbb{Z}^4\)</span>,
+<span class="math display">\[\widehat h\!\left(\sum_{i=1}^4
+n_iQ_i\right)
+=
+n^{\mathsf T}G_Tn
+&gt;0.\]</span> Thus no nontrivial integral relation exists among the
+four specialized points. <span class="qed">∎</span></p>
+</div><p>By Lemma <a data-reference="lem:persist" data-reference-type="ref" href="#lem:persist">4</a>, the corresponding four sections are
+therefore independent over <span class="math inline">\(\mathbb{Q}(t)\)</span>.</p><p>This argument uses specialization only to rule out relations among
+the four explicitly constructed sections. It does not require
+injectivity of the full specialization homomorphism.</p><h2 id="main-theorem">5. Main theorem</h2><p>The regularity graph selects six triple classes from the Piezas
+sextuple. For each selected class, Section 3 constructs four rational
+sections, and Section 4 proves their independence by specialization.</p><div class="theorem" id="thm:main">
+<p><span class="theorem-label">Theorem 6.</span> (Regularity-selected generic rank).
+<em>Let <span class="math inline">\(a,b,c,d,e,f\in\mathbb{Q}(t)\)</span>
+be the Piezas sextuple defined above. For every <span class="math display">\[T\in\{ace,acf,bde,bdf,bef,cef\},\]</span> let
+<span class="math inline">\(E_T/\mathbb{Q}(t)\)</span> be the elliptic
+curve induced by <span class="math inline">\(T\)</span>. Then <span class="math display">\[\operatorname{rank}E_T(\mathbb{Q}(t))\ge
+4.\]</span> More precisely, the four sections listed in Section 3 are
+independent in <span class="math inline">\(E_T(\mathbb{Q}(t))\)</span>.</em></p>
+</div><div class="proof">
+<p><span class="proof-label">Proof.</span> Proposition <a data-reference="prop:sections" data-reference-type="ref" href="#prop:sections">3</a> gives
+four rational sections on each selected curve. Proposition <a data-reference="prop:specialized" data-reference-type="ref" href="#prop:specialized">5</a> proves that these four sections
+specialize to independent rational points at the common good value <span class="math display">\[t=\frac{12}{5}.\]</span> By Lemma <a data-reference="lem:persist" data-reference-type="ref" href="#lem:persist">4</a>, any integral relation among the
+generic sections would specialize to the same relation among those four
+specialized points. No such nontrivial relation exists. Therefore the
+four generic sections are independent, and <span class="math display">\[\operatorname{rank}E_T(\mathbb{Q}(t))\ge
+4\]</span> for every selected triple <span class="math inline">\(T\)</span>. <span class="qed">∎</span></p>
+</div><div class="corollary">
+<p><span class="corollary-label">Corollary 7.</span>. <em>The regularity pattern determined
+by the special pair <span class="math inline">\(\{e,f\}\)</span> and the
+path <span class="math display">\[c-d-a-b\]</span> selects six induced
+elliptic-curve families, each with generic rank at least four.</em></p>
+</div><h5 id="scope.">Scope.</h5><p>The theorem proves a generic rank lower bound for the six selected
+families. It does not prove that their generic rank is exactly four. It
+gives no rank upper bound for the remaining fourteen triple classes, and
+it does not assert that the regularity-selection condition is necessary
+for generic rank at least four.</p><h2 id="discussion">6. Discussion</h2><p>The result here is structural. The six rank <span class="math inline">\(\ge4\)</span> families are not identified by a
+rank search alone. They are selected first by the regularity pattern of
+the parent sextuple, and the rank lower bound is proved afterward. That
+order matters.</p><p>The three regular quadruples share the pair <span class="math inline">\(\{e,f\}\)</span>. Removing that pair leaves the
+path <span class="math display">\[c-d-a-b.\]</span> Its endpoints and
+distance-two pairs select <span class="math display">\[ace,\ acf,\ bde,\
+bdf,\ bef,\ cef.\]</span> For each of these six selected triples, the
+theorem proves four independent rational sections over <span class="math inline">\(\mathbb{Q}(t)\)</span>.</p><p>The height calculation is used only to certify independence at one
+good specialization. It does not choose the six families. The selection
+comes from the regularity structure itself. This separates the
+structural part of the argument from the rank certification step.</p><p>This proves the forward direction only. The six selected families
+have generic rank at least four. The theorem does not show that their
+generic rank is exactly four, and it does not show that the other
+fourteen triple classes have generic rank at most three. It also does
+not show that the regularity rule is necessary for generic rank at least
+four. Additional independent sections may exist on either side of the
+split.</p><p>The next test is to leave the Piezas family. If another parametric
+rational Diophantine sextuple has a different internal regularity
+pattern, does that pattern select a different rank stratification? If
+so, then the induced elliptic curves retain information from the parent
+Diophantine structure that is lost when the curves are studied one at a
+time. The present theorem proves one concrete case of that
+mechanism.</p><h2 class="unnumbered" id="use-of-language-models">Use of language
+models</h2><p>Large language models were used extensively for mathematical
+derivation, literature review, computational cross-checking, and
+manuscript editing. The research direction, structural ideas, and
+computational implementation were developed by the author. The author
+independently reviewed the code and verified the reported computational
+outputs, but does not claim independent expert verification of every
+mathematical derivation. All mathematical claims remain subject to
+independent review.</p><section class="appendices" id="appendices"><h2>Appendices</h2><details class="appendix" id="app:exact-data"><summary><strong>Appendix A.</strong> Exact specialization data</summary><div class="appendix-body"><p>This appendix records the exact rational data used in the
+specialization argument of Proposition <a data-reference="prop:specialized" data-reference-type="ref" href="#prop:specialized">5</a>. No
+floating-point arithmetic enters the construction of the curves or
+points.</p><p>We specialize throughout at <span class="math display">\[t_0=\frac{12}{5}.\]</span> At this value the
+Piezas sextuple becomes <span class="math display">\[\begin{align*}
+a&amp;=-\frac{38081}{2275280},
+&amp;
+b&amp;=-\frac{28560}{13651919},
+&amp;
+c&amp;=-6825840,
+\\
+d&amp;=-\frac{4550799}{9520},
+&amp;
+e&amp;=-\frac{1742340}{28441},
+&amp;
+f&amp;=-\frac{1113959}{19120}.
+\end{align*}\]</span></p><p>All fifteen Diophantine square conditions are exact. With the
+positive square roots chosen at this specialization, we have <span class="math display">\[\rho_{ij}^2=ij+1\]</span> with</p><div class="center">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(ij\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\rho_{ij}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(ij\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\rho_{ij}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(ij\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\rho_{ij}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(ab\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{57122}{57121}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(ac\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(338\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(ad\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{28561}{9520}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(ae\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{80951}{56882}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(af\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{26871}{19120}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(bc\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{28561}{239}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(bd\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{338}{239}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(be\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{60671}{57121}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(bf\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{60502}{57121}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(cd\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(57122\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(ce\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20449\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(cf\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(19942\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(de\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{40729}{238}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(df\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{13351}{80}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(ef\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{28561}{478}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><p>For a specialized triple <span class="math inline">\(T=\{u,v,w\}\)</span> we use the model <span class="math display">\[E_T:\qquad
+y^2=(x+uv)(x+uw)(x+vw).\]</span> The four points recorded below are
+precisely the specializations of the four rational sections used in
+Theorem <a data-reference="thm:main" data-reference-type="ref" href="#thm:main">6</a>. Direct substitution verifies each point
+on its stated curve.</p><h3 class="unnumbered" id="the-class-ace">The class <span class="math inline">\(ace\)</span></h3><p>The specialized curve is <span class="math display">\[E_{ace}:\quad
+y^2=
+(x+114243)
+\left(x+\frac{3317502477}{3235561924}\right)
+(x+418161600).\]</span> The four points are <span class="math display">\[\begin{align*}
+P&amp;=
+\left(
+0,\,
+-\frac{199050148620}{28441}
+\right),
+\\[2pt]
+R&amp;=
+\left(
+\frac{394837631403}{56882},\,
+\frac{466858506265862215401}{3235561924}
+\right),
+\\[2pt]
+E_d&amp;=
+\left(
+\frac{189505693993671}{56644},\,
+-\frac{330661077157423728610479}{1611012004}
+\right),
+\\[2pt]
+E_f&amp;=
+\left(
+\frac{93165422061591}{228484},\,
+-\frac{76160268231819882592131}{6498313444}
+\right).
+\end{align*}\]</span></p><h3 class="unnumbered" id="the-class-acf">The class <span class="math inline">\(acf\)</span></h3><p>The specialized curve is <span class="math display">\[E_{acf}:\quad
+y^2=
+(x+114243)
+\left(x+\frac{356476241}{365574400}\right)
+(x+397683363).\]</span> The four points are <span class="math display">\[\begin{align*}
+P&amp;=
+\left(
+0,\,
+-\frac{127262018037}{19120}
+\right),
+\\[2pt]
+R&amp;=
+\left(
+\frac{3235533363}{478},\,
+\frac{1254589890156810987}{9139360}
+\right),
+\\[2pt]
+E_d&amp;=
+\left(
+\frac{20362992314643}{6400},\,
+-\frac{11646956640529776327333}{61184000}
+\right),
+\\[2pt]
+E_e&amp;=
+\left(
+\frac{93165422061591}{228484},\,
+-\frac{50561453069318051543397}{4368614080}
+\right).
+\end{align*}\]</span></p><h3 class="unnumbered" id="the-class-bde">The class <span class="math inline">\(bde\)</span></h3><p>The specialized curve is <span class="math display">\[E_{bde}:\quad
+y^2=
+\left(x+\frac{57123}{57121}\right)
+\left(x+\frac{418161600}{3262808641}\right)
+\left(x+\frac{1658794797}{56644}\right).\]</span> The four points are
+<span class="math display">\[\begin{align*}
+P&amp;=
+\left(
+0,\,
+-\frac{99527687820}{1624578361}
+\right),
+\\[2pt]
+R&amp;=
+\left(
+\frac{1385065952289}{3249156722},\,
+\frac{3249936130500360056925}{44171629305932156}
+\right),
+\\[2pt]
+E_c&amp;=
+\left(
+\frac{23886645076800}{57121},\,
+-\frac{3320418339500155352161560}{388274228279}
+\right),
+\\[2pt]
+E_f&amp;=
+\left(
+\frac{46583934284151}{13051234564},\,
+-\frac{57403828718851406957451}{88714448774099036}
+\right).
+\end{align*}\]</span></p><h3 class="unnumbered" id="the-class-bdf">The class <span class="math inline">\(bdf\)</span></h3><p>The specialized curve is <span class="math display">\[E_{bdf}:\quad
+y^2=
+\left(x+\frac{57123}{57121}\right)
+\left(x+\frac{397683363}{3262808641}\right)
+\left(x+\frac{178242801}{6400}\right).\]</span> The four points are
+<span class="math display">\[\begin{align*}
+P&amp;=
+\left(
+0,\,
+-\frac{63632679957}{1092153520}
+\right),
+\\[2pt]
+R&amp;=
+\left(
+\frac{113387422269}{273038380},\,
+\frac{87230163507296259879}{1247698024318400}
+\right),
+\\[2pt]
+E_c&amp;=
+\left(
+\frac{22716866744649}{57121},\,
+-\frac{517566012179744500059087}{65256172820}
+\right),
+\\[2pt]
+E_e&amp;=
+\left(
+\frac{46583934284151}{13051234564},\,
+-\frac{37739102057967529702197}{59639965562419520}
+\right).
+\end{align*}\]</span></p><h3 class="unnumbered" id="the-class-bef">The class <span class="math inline">\(bef\)</span></h3><p>The specialized curve is <span class="math display">\[E_{bef}:\quad
+y^2=
+\left(x+\frac{418161600}{3262808641}\right)
+\left(x+\frac{397683363}{3262808641}\right)
+\left(x+\frac{815502237}{228484}\right).\]</span> The four points are
+<span class="math display">\[\begin{align*}
+P&amp;=
+\left(
+0,\,
+-\frac{5822685972180}{779811265199}
+\right),
+\\[2pt]
+R&amp;=
+\left(
+\frac{841003521633}{6525617282},\,
+\frac{24470005333732101}{3119245060796}
+\right),
+\\[2pt]
+E_c&amp;=
+\left(
+\frac{166295911365460800}{3262808641},\,
+-\frac{67816842351097230485934840}{186374892382561}
+\right),
+\\[2pt]
+E_d&amp;=
+\left(
+\frac{46583934284151}{13051234564},\,
+-\frac{224828135616926173761}{745499569530244}
+\right).
+\end{align*}\]</span></p><h3 class="unnumbered" id="the-class-cef">The class <span class="math inline">\(cef\)</span></h3><p>The specialized curve is <span class="math display">\[E_{cef}:\quad
+y^2=
+(x+418161600)
+(x+397683363)
+\left(x+\frac{815502237}{228484}\right).\]</span> The four points are
+<span class="math display">\[\begin{align*}
+P&amp;=
+\left(
+0,\,
+-\frac{5822685972180}{239}
+\right),
+\\[2pt]
+R&amp;=
+\left(
+\frac{820414727}{2},\,
+\frac{15839801271764899}{956}
+\right),
+\\[2pt]
+E_a&amp;=
+\left(
+\frac{93165422061591}{228484},\,
+-\frac{899371586570760771039}{54607676}
+\right),
+\\[2pt]
+E_b&amp;=
+\left(
+\frac{166295911365460800}{3262808641},\,
+-\frac{610446576036399933920249160}{186374892382561}
+\right).
+\end{align*}\]</span></p><p>The data above are exact. In particular, the independence calculation
+in Appendix <a data-reference="app:gram-data" data-reference-type="ref" href="#app:gram-data">B</a> begins from rational curves and
+rational points; the interval arithmetic enters only when enclosing
+canonical heights.</p></div></details><details class="appendix" id="app:gram-data"><summary><strong>Appendix B.</strong> Certified canonical-height Gram data</summary><div class="appendix-body"><p>This appendix records the complete interval Gram enclosures used to
+prove Proposition <a data-reference="prop:specialized" data-reference-type="ref" href="#prop:specialized">5</a>. The canonical-height pairing is
+<span class="math display">\[\langle Q_i,Q_j\rangle
+=
+\frac{1}{2}
+\left(
+\widehat h(Q_i+Q_j)
+-\widehat h(Q_i)
+-\widehat h(Q_j)
+\right).\]</span> For each selected curve, let <span class="math display">\[G_T=
+\bigl(\langle Q_i,Q_j\rangle\bigr)_{1\le i,j\le4}.\]</span></p><p>Every entry below is an interval containing the corresponding exact
+entry of <span class="math inline">\(G_T\)</span>. The displayed decimal
+intervals have been enlarged outward to six decimal places from the
+intervals used in the proof. Thus the printed intervals remain rigorous
+enclosures.</p><p>The matrices are listed in the exact point order used by the
+fixed-order interval Cholesky calculation. After each matrix we give the
+four resulting pivot intervals. Strict positivity of the lower endpoint
+of every pivot proves positive definiteness of the exact Gram
+matrix.</p><h3 class="unnumbered" id="the-class-ace-1">The class <span class="math inline">\(ace\)</span></h3><p>The point order is <span class="math display">\[(P,R,E_f,E_d).\]</span> <span class="math display">\[G_{ace}\in
+\begin{pmatrix}
+[6.773169,6.822800] &amp;
+[0.110643,0.185089] &amp;
+[-1.527812,-1.453366] &amp;
+[-0.752920,-0.678475]
+\\
+[0.110643,0.185089] &amp;
+[1.833062,1.882692] &amp;
+[0.031173,0.105618] &amp;
+[-1.495576,-1.421131]
+\\
+[-1.527812,-1.453366] &amp;
+[0.031173,0.105618] &amp;
+[6.838918,6.888548] &amp;
+[-0.170711,-0.096265]
+\\
+[-0.752920,-0.678475] &amp;
+[-1.495576,-1.421131] &amp;
+[-0.170711,-0.096265] &amp;
+[5.712859,5.762489]
+\end{pmatrix}.\]</span> The Cholesky pivots satisfy <span class="math display">\[\begin{aligned}
+p_1&amp;\in[6.773169,6.822800],&amp;
+p_2&amp;\in[1.828004,1.880898],\\
+p_3&amp;\in[6.482412,6.577364],&amp;
+p_4&amp;\in[4.409636,4.649906].
+\end{aligned}\]</span></p><h3 class="unnumbered" id="the-class-acf-1">The class <span class="math inline">\(acf\)</span></h3><p>The point order is <span class="math display">\[(P,R,E_e,E_d).\]</span> <span class="math display">\[G_{acf}\in
+\begin{pmatrix}
+[6.609255,6.656429] &amp;
+[0.258772,0.329533] &amp;
+[1.759208,1.829969] &amp;
+[0.679860,0.750620]
+\\
+[0.258772,0.329533] &amp;
+[1.614795,1.661969] &amp;
+[0.054934,0.125694] &amp;
+[1.143375,1.214136]
+\\
+[1.759208,1.829969] &amp;
+[0.054934,0.125694] &amp;
+[6.646619,6.693793] &amp;
+[-0.178178,-0.107417]
+\\
+[0.679860,0.750620] &amp;
+[1.143375,1.214136] &amp;
+[-0.178178,-0.107417] &amp;
+[5.156196,5.203370]
+\end{pmatrix}.\]</span> The Cholesky pivots satisfy <span class="math display">\[\begin{aligned}
+p_1&amp;\in[6.609255,6.656429],&amp;
+p_2&amp;\in[1.598365,1.651909],\\
+p_3&amp;\in[6.137884,6.228857],&amp;
+p_4&amp;\in[4.158465,4.382636].
+\end{aligned}\]</span></p><h3 class="unnumbered" id="the-class-bde-1">The class <span class="math inline">\(bde\)</span></h3><p>The point order is <span class="math display">\[(P,R,E_f,E_c).\]</span> <span class="math display">\[G_{bde}\in
+\begin{pmatrix}
+[6.820699,6.872219] &amp;
+[0.002413,0.079692] &amp;
+[-1.305068,-1.227789] &amp;
+[-0.441021,-0.363742]
+\\
+[0.002413,0.079692] &amp;
+[1.885343,1.936863] &amp;
+[-0.561283,-0.484004] &amp;
+[-2.209275,-2.131997]
+\\
+[-1.305068,-1.227789] &amp;
+[-0.561283,-0.484004] &amp;
+[6.557134,6.608653] &amp;
+[0.797995,0.875274]
+\\
+[-0.441021,-0.363742] &amp;
+[-2.209275,-2.131997] &amp;
+[0.797995,0.875274] &amp;
+[6.505074,6.556594]
+\end{pmatrix}.\]</span> The Cholesky pivots satisfy <span class="math display">\[\begin{aligned}
+p_1&amp;\in[6.820699,6.872219],&amp;
+p_2&amp;\in[1.884412,1.936862],\\
+p_3&amp;\in[6.140499,6.275849],&amp;
+p_4&amp;\in[3.872491,4.201377].
+\end{aligned}\]</span></p><h3 class="unnumbered" id="the-class-bdf-1">The class <span class="math inline">\(bdf\)</span></h3><p>The point order is <span class="math display">\[(P,R,E_e,E_c).\]</span> <span class="math display">\[G_{bdf}\in
+\begin{pmatrix}
+[6.933809,6.981345] &amp;
+[0.152815,0.224118] &amp;
+[-1.880476,-1.809174] &amp;
+[-0.158499,-0.087196]
+\\
+[0.152815,0.224118] &amp;
+[1.668454,1.715990] &amp;
+[-0.728891,-0.657589] &amp;
+[1.967046,2.038349]
+\\
+[-1.880476,-1.809174] &amp;
+[-0.728891,-0.657589] &amp;
+[6.637595,6.685131] &amp;
+[-0.398411,-0.327108]
+\\
+[-0.158499,-0.087196] &amp;
+[1.967046,2.038349] &amp;
+[-0.398411,-0.327108] &amp;
+[6.450297,6.497832]
+\end{pmatrix}.\]</span> The Cholesky pivots satisfy <span class="math display">\[\begin{aligned}
+p_1&amp;\in[6.933809,6.981345],&amp;
+p_2&amp;\in[1.661210,1.712645],\\
+p_3&amp;\in[5.841594,6.008324],&amp;
+p_4&amp;\in[3.890490,4.223149].
+\end{aligned}\]</span></p><h3 class="unnumbered" id="the-class-bef-1">The class <span class="math inline">\(bef\)</span></h3><p>The point order is <span class="math display">\[(P,R,E_d,E_c).\]</span> <span class="math display">\[G_{bef}\in
+\begin{pmatrix}
+[6.561903,6.598280] &amp;
+[1.678559,1.733124] &amp;
+[-0.471727,-0.417162] &amp;
+[-0.145952,-0.091387]
+\\
+[1.678559,1.733124] &amp;
+[1.888092,1.924469] &amp;
+[-0.598681,-0.544116] &amp;
+[-0.030757,0.023808]
+\\
+[-0.471727,-0.417162] &amp;
+[-0.598681,-0.544116] &amp;
+[4.841693,4.878070] &amp;
+[0.627790,0.682355]
+\\
+[-0.145952,-0.091387] &amp;
+[-0.030757,0.023808] &amp;
+[0.627790,0.682355] &amp;
+[9.228621,9.264998]
+\end{pmatrix}.\]</span> The Cholesky pivots satisfy <span class="math display">\[\begin{aligned}
+p_1&amp;\in[6.561903,6.598280],&amp;
+p_2&amp;\in[1.430341,1.497454],\\
+p_3&amp;\in[4.638163,4.734163],&amp;
+p_4&amp;\in[9.117599,9.183914].
+\end{aligned}\]</span></p><h3 class="unnumbered" id="the-class-cef-1">The class <span class="math inline">\(cef\)</span></h3><p>The point order is <span class="math display">\[(P,E_b,E_a,R).\]</span> <span class="math display">\[G_{cef}\in
+\begin{pmatrix}
+[6.662849,6.700899] &amp;
+[-0.307507,-0.250432] &amp;
+[0.243157,0.300232] &amp;
+[1.623072,1.680146]
+\\
+[-0.307507,-0.250432] &amp;
+[10.718389,10.756439] &amp;
+[0.246104,0.303178] &amp;
+[-0.030764,0.026310]
+\\
+[0.243157,0.300232] &amp;
+[0.246104,0.303178] &amp;
+[5.876537,5.914587] &amp;
+[-0.032975,0.024099]
+\\
+[1.623072,1.680146] &amp;
+[-0.030764,0.026310] &amp;
+[-0.032975,0.024099] &amp;
+[1.720959,1.759009]
+\end{pmatrix}.\]</span> The Cholesky pivots satisfy <span class="math display">\[\begin{aligned}
+p_1&amp;\in[6.662849,6.700899],&amp;
+p_2&amp;\in[10.704197,10.747079],\\
+p_3&amp;\in[5.853619,5.899704],&amp;
+p_4&amp;\in[1.294142,1.365576].
+\end{aligned}\]</span></p><div class="proposition" id="prop:appendix-independence">
+<p><span class="proposition-label">Proposition 8.</span> (Verification of specialized
+independence). <em>For each <span class="math display">\[T\in\{ace,acf,bde,bdf,bef,cef\},\]</span> the
+four rational points recorded in Appendix <a data-reference="app:exact-data" data-reference-type="ref" href="#app:exact-data">A</a> are
+independent in <span class="math inline">\(E_T(\mathbb{Q})\)</span> at
+<span class="math inline">\(t=12/5\)</span>.</em></p>
+</div><div class="proof">
+<p><span class="proof-label">Proof.</span> For every <span class="math inline">\(T\)</span>,
+each lower endpoint of each fixed-order interval-Cholesky pivot is
+strictly positive. Hence every real symmetric matrix contained in the
+displayed interval enclosure is positive definite. The exact
+canonical-height Gram matrix is one such matrix. Therefore, for every
+nonzero <span class="math inline">\(n\in\mathbb{Z}^4\)</span>, <span class="math display">\[\widehat h\!\left(\sum_{i=1}^4 n_iQ_i\right)
+=
+n^{\mathsf T}G_Tn
+&gt;0.\]</span> Thus no nontrivial integral relation exists among the
+four points. <span class="qed">∎</span></p>
+</div></div></details><details class="appendix" id="app:height-method"><summary><strong>Appendix C.</strong> Canonical-height certification method</summary><div class="appendix-body"><p>This appendix describes the rigorous height enclosure used in
+Appendix <a data-reference="app:gram-data" data-reference-type="ref" href="#app:gram-data">B</a>. The purpose is to identify the
+numerical step that carries the independence proof and to state the
+bounds used there.</p><h3 id="short-weierstrass-certification-model">Short-Weierstrass
+certification model</h3><p>Write a specialized curve in generalized Weierstrass form <span class="math display">\[E:\qquad
+y^2+a_1xy+a_3y
+=
+x^3+a_2x^2+a_4x+a_6.\]</span> Let <span class="math inline">\(b_2,b_4,b_6,b_8,c_4,c_6\)</span> denote the
+standard Weierstrass invariants. The exact change of variables <span class="math display">\[X=36x+3b_2,
+\qquad
+Y=216y+108a_1x+108a_3\]</span> maps <span class="math inline">\(E\)</span> to the short Weierstrass model <span class="math display">\[E^{\mathrm{sh}}:\qquad
+Y^2=X^3+AX+B,\]</span> where <span class="math display">\[A=-27c_4,
+\qquad
+B=-54c_6.\]</span> This model is used only for the height certificate.
+It is <span class="math inline">\(\mathbb{Q}\)</span>-isomorphic to the
+original curve.</p><p>For a projective <span class="math inline">\(x\)</span>-coordinate
+<span class="math inline">\((X:Z)\)</span>, define <span class="math display">\[h_x(X:Z)=\log\max\{|X|,|Z|\},\]</span> after
+replacing <span class="math inline">\((X,Z)\)</span> by a primitive
+integral pair.</p><p>On the short model, duplication of the <span class="math inline">\(x\)</span>-coordinate is represented by the
+homogeneous quartic forms <span class="equation-anchor" id="eq:dup-F"></span><span class="equation-anchor" id="eq:dup-G"></span><span class="math display">\[\begin{align}
+F(X,Z)
+&amp;=
+X^4-2AX^2Z^2-8BXZ^3+A^2Z^4,
+\label{eq:dup-F}
+\\
+G(X,Z)
+&amp;=
+4X^3Z+4AXZ^3+4BZ^4.
+\label{eq:dup-G}
+\end{align}\]</span> After clearing denominators and removing common
+content, <span class="math inline">\(F\)</span> and <span class="math inline">\(G\)</span> are taken to be primitive integral
+forms.</p><h3 id="a-uniform-duplication-height-bound">A uniform duplication-height
+bound</h3><p>The height error is controlled by exact Bézout certificates for the
+two affine charts of the duplication map.</p><p>Define <span class="math display">\[f_x(T)=F(1,T),
+\qquad
+g_x(T)=G(1,T),\]</span> and <span class="math display">\[f_z(T)=F(T,1),
+\qquad
+g_z(T)=G(T,1).\]</span> Thus the <span class="math inline">\(x\)</span>-chart is used when <span class="math inline">\(|X|\ge |Z|\)</span>, with <span class="math inline">\(T=Z/X\)</span>, and the <span class="math inline">\(z\)</span>-chart is used when <span class="math inline">\(|Z|\ge |X|\)</span>, with <span class="math inline">\(T=X/Z\)</span>.</p><p>Exact extended Euclidean calculations give integer polynomials <span class="math inline">\(s_x,t_x,s_z,t_z\)</span> and nonzero integers
+<span class="math inline">\(c_x,c_z\)</span> satisfying <span class="math display">\[s_xf_x+t_xg_x=c_x,
+\qquad
+s_zf_z+t_zg_z=c_z.\]</span> Put <span class="math display">\[K_x=\|s_x\|_1+\|t_x\|_1,
+\qquad
+K_z=\|s_z\|_1+\|t_z\|_1,\]</span> and <span class="math display">\[C_{\mathrm{up}}
+=
+\max\{1,\|F\|_1,\|G\|_1\}.\]</span> The certification constant is <span class="equation-anchor" id="eq:CE"></span><span class="math display">\[\begin{equation}
+C_E=
+\max\{
+1,\,
+C_{\mathrm{up}},\,
+K_z|c_x|,\,
+K_x|c_z|
+\}.
+\label{eq:CE}
+\end{equation}\]</span> All quantities entering <a data-reference="eq:CE" data-reference-type="eqref" href="#eq:CE">(11)</a> are
+obtained with exact integer arithmetic.</p><div class="lemma" id="lem:dup-height">
+<p><span class="lemma-label">Lemma 9.</span> (Uniform duplication-height bound). <em>For
+every rational point <span class="math inline">\(Q\)</span> on the short
+certification model, <span class="equation-anchor" id="eq:dup-height-bound"></span><span class="math display">\[\begin{equation}
+\left|
+h_x(2Q)-4h_x(Q)
+\right|
+\le \log C_E.
+\label{eq:dup-height-bound}
+\end{equation}\]</span></em></p>
+</div><div class="proof">
+<p><span class="proof-label">Proof.</span> Let <span class="math inline">\((X,Z)\)</span> be the
+primitive integral projective <span class="math inline">\(x\)</span>-coordinate of <span class="math inline">\(Q\)</span>, and put <span class="math display">\[M=\max\{|X|,|Z|\}.\]</span> Write <span class="math display">\[F_Q=F(X,Z),
+\qquad
+G_Q=G(X,Z),
+\qquad
+d=\gcd(|F_Q|,|G_Q|).\]</span> The duplication forms have no common
+projective zero on a smooth elliptic curve, so <span class="math inline">\(F_Q\)</span> and <span class="math inline">\(G_Q\)</span> are not both zero. The primitive
+projective <span class="math inline">\(x\)</span>-coordinate of <span class="math inline">\(2Q\)</span> is therefore <span class="math display">\[\left(
+\frac{F_Q}{d}:\frac{G_Q}{d}
+\right).\]</span></p>
+<p>For the upper bound, the coefficient norms give <span class="math display">\[|F_Q|\le \|F\|_1M^4,
+\qquad
+|G_Q|\le \|G\|_1M^4.\]</span> Since <span class="math inline">\(d\ge1\)</span>, <span class="math display">\[\max\left\{
+\left|\frac{F_Q}{d}\right|,
+\left|\frac{G_Q}{d}\right|
+\right\}
+\le
+C_{\mathrm{up}}M^4
+\le
+C_EM^4.\]</span> Taking logarithms gives <span class="math display">\[h_x(2Q)-4h_x(Q)\le\log C_E.\]</span></p>
+<p>For the reverse bound, first control the common divisor <span class="math inline">\(d\)</span>. Homogenizing the two Bézout identities
+gives identities of the form <span class="math display">\[S_x(X,Z)F(X,Z)+T_x(X,Z)G(X,Z)
+=
+c_xX^{N_x},\]</span> and <span class="math display">\[S_z(X,Z)F(X,Z)+T_z(X,Z)G(X,Z)
+=
+c_zZ^{N_z},\]</span> for suitable homogeneous integer polynomials <span class="math inline">\(S_x,T_x,S_z,T_z\)</span> and positive integers
+<span class="math inline">\(N_x,N_z\)</span>. Since <span class="math inline">\(d\)</span> divides both <span class="math inline">\(F_Q\)</span> and <span class="math inline">\(G_Q\)</span>, <span class="math display">\[d\mid
+c_xX^{N_x},
+\qquad
+d\mid c_zZ^{N_z}.\]</span> Because <span class="math inline">\((X,Z)\)</span> is primitive, <span class="math display">\[\gcd(X,Z)=1.\]</span> Prime by prime, the two
+divisibilities therefore imply <span class="math display">\[d\mid
+c_xc_z,\]</span> and hence <span class="math display">\[d\le
+|c_xc_z|.\]</span></p>
+<p>Suppose first that <span class="math inline">\(|X|=M\)</span>. Then
+<span class="math inline">\(|Z/X|\le1\)</span>. Evaluating the <span class="math inline">\(x\)</span>-chart Bézout identity at <span class="math inline">\(T=Z/X\)</span> gives <span class="math display">\[|c_x|
+\le
+\left(
+|s_x(Z/X)|+|t_x(Z/X)|
+\right)
+\max\left\{
+|f_x(Z/X)|,\,
+|g_x(Z/X)|
+\right\}.\]</span> Since <span class="math inline">\(|Z/X|\le1\)</span>,
+<span class="math display">\[|s_x(Z/X)|+|t_x(Z/X)|\le K_x.\]</span>
+Using <span class="math display">\[F_Q=X^4f_x(Z/X),
+\qquad
+G_Q=X^4g_x(Z/X),\]</span> we obtain <span class="math display">\[|c_x|M^4
+\le
+K_x\max\{|F_Q|,|G_Q|\}.\]</span> After division by <span class="math inline">\(d\)</span> and using <span class="math inline">\(d\le|c_xc_z|\)</span>, <span class="math display">\[\max\left\{
+\left|\frac{F_Q}{d}\right|,
+\left|\frac{G_Q}{d}\right|
+\right\}
+\ge
+\frac{M^4}{K_x|c_z|}.\]</span></p>
+<p>If instead <span class="math inline">\(|Z|=M\)</span>, the same
+argument on the reciprocal chart gives <span class="math display">\[\max\left\{
+\left|\frac{F_Q}{d}\right|,
+\left|\frac{G_Q}{d}\right|
+\right\}
+\ge
+\frac{M^4}{K_z|c_x|}.\]</span> Therefore, in both cases, <span class="math display">\[M^4
+\le
+\max\{K_z|c_x|,K_x|c_z|\}
+\max\left\{
+\left|\frac{F_Q}{d}\right|,
+\left|\frac{G_Q}{d}\right|
+\right\}.\]</span> By <a data-reference="eq:CE" data-reference-type="eqref" href="#eq:CE">(11)</a>, <span class="math display">\[4h_x(Q)-h_x(2Q)\le\log C_E.\]</span> Combining
+the two bounds proves <a data-reference="eq:dup-height-bound" data-reference-type="eqref" href="#eq:dup-height-bound">(12)</a>. <span class="qed">∎</span></p>
+</div><p>We use the standard Néron–Tate canonical height and associated
+bilinear pairing <span class="citation" data-cites="Silverman09">[10]</span>. With the normalization used here,
+<span class="math display">\[\widehat h(Q)
+=
+\lim_{n\to\infty}
+\frac{h_x(2^nQ)}{2\cdot4^n}.\]</span> Applying Lemma <a data-reference="lem:dup-height" data-reference-type="ref" href="#lem:dup-height">9</a> along the duplication tower gives
+<span class="equation-anchor" id="eq:height-tail"></span><span class="math display">\[\begin{equation}
+\left|
+\widehat h(Q)
+-
+\frac{h_x(2^nQ)}{2\cdot4^n}
+\right|
+\le
+\frac{\log C_E}{6\cdot4^n}.
+\label{eq:height-tail}
+\end{equation}\]</span> Indeed, <span class="math display">\[\begin{aligned}
+\left|
+\widehat h(Q)
+-
+\frac{h_x(2^nQ)}{2\cdot4^n}
+\right|
+&amp;\le
+\sum_{k=n}^{\infty}
+\frac{
+\left|
+h_x(2^{k+1}Q)-4h_x(2^kQ)
+\right|
+}{
+2\cdot4^{k+1}
+}
+\\
+&amp;\le
+\frac{\log C_E}{2}
+\sum_{k=n}^{\infty}\frac{1}{4^{k+1}}
+\\
+&amp;=
+\frac{\log C_E}{6\cdot4^n}.
+\end{aligned}\]</span></p><p>For all six specialized curves, the maximum in <a data-reference="eq:CE" data-reference-type="eqref" href="#eq:CE">(11)</a> is
+attained by the same term: <span class="math display">\[C_E=K_x|c_z|.\]</span> The resulting exact
+integers are large, ranging from <span class="math inline">\(195\)</span> to <span class="math inline">\(275\)</span> decimal digits. Their sizes are:</p><div class="center">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(T\)</span></th>
+<th style="text-align: center;">term attaining <span class="math inline">\(C_E\)</span></th>
+<th style="text-align: center;">decimal digits of <span class="math inline">\(C_E\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(ace\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(K_x|c_z|\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(265\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(acf\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(K_x|c_z|\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(252\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(bde\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(K_x|c_z|\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(275\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(bdf\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(K_x|c_z|\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(254\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(bef\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(K_x|c_z|\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(195\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(cef\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(K_x|c_z|\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(204\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><p>The proof uses <span class="math inline">\(n=6\)</span> throughout.
+For reference, the curve constants give the following outward-rounded
+upper bounds:</p><div class="center">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(T\)</span></th>
+<th style="text-align: center;">upper bound for <span class="math inline">\(\log C_E\)</span></th>
+<th style="text-align: center;">upper bound for <span class="math inline">\(\varepsilon_6=\frac{\log
+C_E}{6\cdot4^6}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(ace\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(609.849026\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.024815\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(acf\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(579.662590\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.023587\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(bde\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(633.059132\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.025760\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(bdf\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(584.105307\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.023768\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(bef\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(446.987750\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.018188\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(cef\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(467.544700\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.019025\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><p>Thus, if <span class="math display">\[m_n(Q)=\frac{h_x(2^nQ)}{2\cdot4^n},\]</span> then
+the certified height interval is <span class="equation-anchor" id="eq:height-interval"></span><span class="math display">\[\begin{equation}
+I_h(Q)=
+\left[
+\max\{0,m_n(Q)-\varepsilon_n\},
+\,
+m_n(Q)+\varepsilon_n
+\right],
+\qquad
+\varepsilon_n=\frac{\log C_E}{6\cdot4^n}.
+\label{eq:height-interval}
+\end{equation}\]</span> The lower endpoint may be replaced by zero
+because the canonical height is nonnegative.</p><p>The duplication tower itself is computed in exact rational/projective
+arithmetic. Floating-point arithmetic is used only to represent interval
+endpoints, and every elementary interval operation is rounded
+outward.</p><h3 id="pairing-intervals">Pairing intervals</h3><p>For rational points <span class="math inline">\(Q_i,Q_j\)</span>,
+polarization gives <span class="math display">\[\langle Q_i,Q_j\rangle
+=
+\frac{
+\widehat h(Q_i+Q_j)
+-\widehat h(Q_i)
+-\widehat h(Q_j)
+}{2}.\]</span> If <span class="math display">\[I_h(Q_i)=[a_i,b_i],
+\qquad
+I_h(Q_j)=[a_j,b_j],
+\qquad
+I_h(Q_i+Q_j)=[a_{ij},b_{ij}],\]</span> then an enclosing interval for
+the pairing is <span class="equation-anchor" id="eq:pairing-interval"></span><span class="math display">\[\begin{equation}
+I_{ij}
+=
+\left[
+\frac{a_{ij}-b_i-b_j}{2},
+\,
+\frac{b_{ij}-a_i-a_j}{2}
+\right].
+\label{eq:pairing-interval}
+\end{equation}\]</span> The diagonal entries are the intervals <span class="math inline">\(I_h(Q_i)\)</span>. Applying <a data-reference="eq:height-interval" data-reference-type="eqref" href="#eq:height-interval">(14)</a> and <a data-reference="eq:pairing-interval" data-reference-type="eqref" href="#eq:pairing-interval">(15)</a> to the
+four points on each curve produces the six interval matrices displayed
+in Appendix <a data-reference="app:gram-data" data-reference-type="ref" href="#app:gram-data">B</a>.</p><h3 id="interval-cholesky-certificate">Interval Cholesky
+certificate</h3><p>Let <span class="math display">\[\mathcal G=(I_{ij})\]</span> be one
+of the symmetric interval matrices in Appendix <a data-reference="app:gram-data" data-reference-type="ref" href="#app:gram-data">B</a>.
+Fixed-order interval Cholesky is performed with outward-rounded interval
+arithmetic.</p><p>At step <span class="math inline">\(i\)</span>, suppose the preceding
+interval entries of the lower-triangular factor have been constructed.
+The next squared diagonal entry is enclosed by <span class="math display">\[D_i
+=
+I_{ii}
+-
+\sum_{m&lt;i}L_{im}^2.\]</span> If <span class="math display">\[\inf
+D_i&gt;0,\]</span> then <span class="math inline">\(\sqrt{D_i}\)</span>
+is defined and has strictly positive lower endpoint. The off-diagonal
+entries in column <span class="math inline">\(i\)</span> are then
+enclosed by <span class="math display">\[L_{ji}
+=
+\frac{
+I_{ji}-\sum_{m&lt;i}L_{jm}L_{im}
+}{
+\sqrt{D_i}
+},
+\qquad j&gt;i.\]</span></p><div class="lemma" id="lem:interval-cholesky">
+<p><span class="lemma-label">Lemma 10.</span> (Interval Cholesky certificate).
+<em>Suppose the fixed-order interval Cholesky calculation for a
+symmetric interval matrix <span class="math inline">\(\mathcal
+G\)</span> produces pivot intervals <span class="math display">\[D_1,\ldots,D_m\]</span> such that <span class="math display">\[\inf D_i&gt;0
+\qquad
+\text{for every }i.\]</span> Then every exact real symmetric matrix
+represented by <span class="math inline">\(\mathcal G\)</span> is
+positive definite.</em></p>
+</div><div class="proof">
+<p><span class="proof-label">Proof.</span> Let <span class="math inline">\(G\)</span> be an
+exact real symmetric matrix represented by <span class="math inline">\(\mathcal G\)</span>. Apply the ordinary Cholesky
+recursion to <span class="math inline">\(G\)</span> in the same fixed
+order.</p>
+<p>At the first step, the exact first squared diagonal entry lies in
+<span class="math inline">\(D_1\)</span>. Since <span class="math display">\[\inf D_1&gt;0,\]</span> it is positive. Its
+square root therefore exists and lies in <span class="math inline">\(\sqrt{D_1}\)</span>. Because the lower endpoint of
+<span class="math inline">\(\sqrt{D_1}\)</span> is strictly positive,
+the divisions defining the remaining entries in the first Cholesky
+column are valid. Outward-rounded interval arithmetic encloses all of
+those exact entries.</p>
+<p>Assume inductively that the exact Cholesky entries through column
+<span class="math inline">\(i-1\)</span> lie in the intervals already
+constructed. Interval addition, subtraction, multiplication, squaring,
+square root, and division preserve inclusion whenever the denominator
+interval excludes zero. It follows that the exact <span class="math inline">\(i\)</span>th squared diagonal entry lies in <span class="math inline">\(D_i\)</span>. Since <span class="math display">\[\inf D_i&gt;0,\]</span> that entry is positive,
+its square root lies in <span class="math inline">\(\sqrt{D_i}\)</span>,
+and <span class="math inline">\(\sqrt{D_i}\)</span> is bounded away from
+zero. The exact off-diagonal entries in column <span class="math inline">\(i\)</span> therefore lie in the intervals produced
+by the stated recursion.</p>
+<p>The induction continues through all columns. Every exact Cholesky
+diagonal entry of <span class="math inline">\(G\)</span> is positive.
+Hence <span class="math inline">\(G\)</span> admits a Cholesky
+factorization with positive diagonal and is positive definite. <span class="qed">∎</span></p>
+</div><p>The six certificates in Appendix <a data-reference="app:gram-data" data-reference-type="ref" href="#app:gram-data">B</a> have
+strictly positive lower endpoints at all four Cholesky steps. By
+Lemma <a data-reference="lem:interval-cholesky" data-reference-type="ref" href="#lem:interval-cholesky">10</a>, the exact
+canonical-height Gram matrix <span class="math inline">\(G_T\)</span> is
+positive definite for each of the six specialized curves. Therefore
+<span class="math display">\[n^{\mathsf T}G_Tn&gt;0
+\qquad
+\text{for every }0\ne n\in\mathbb Z^4,\]</span> which proves
+independence of the four specialized points.</p><h3 id="logical-role-of-the-computation">Logical role of the
+computation</h3><p>The certified computation is used only at the specialization <span class="math display">\[t=\frac{12}{5}.\]</span> The generic section
+identities are exact identities in <span class="math inline">\(\mathbb
+Q(t)\)</span> and do not depend on numerical height calculations.</p><p>Suppose, for one of the six selected families, that the four generic
+sections satisfied a nontrivial relation <span class="math display">\[n_1Q_1+n_2Q_2+n_3Q_3+n_4Q_4=O,
+\qquad
+(n_1,n_2,n_3,n_4)\ne(0,0,0,0).\]</span> All four sections and the curve
+have good specialization at <span class="math inline">\(t=12/5\)</span>,
+so the same relation would hold among the four exact rational points
+listed in Appendix <a data-reference="app:exact-data" data-reference-type="ref" href="#app:exact-data">A</a>. Appendix <a data-reference="app:gram-data" data-reference-type="ref" href="#app:gram-data">B</a> proves
+that those four points are independent. Therefore the assumed nontrivial
+relation cannot exist, and the four generic sections are
+independent.</p><p>The computation therefore proves the independence required for the
+generic rank lower bound. It does not compute the exact generic rank,
+and it does not give a rank upper bound for any of the six families or
+for the remaining fourteen triple classes.</p></div></details><p><a download="" href="../files/dmt-001-verification.zip"><i class="fa-solid fa-file-arrow-down"></i> Download Certificates</a></p></section><section class="references" id="references"><h2>References</h2><div class="csl-bib-body" data-entry-spacing="0" id="refs" role="list">
+<div class="csl-entry" id="ref-DKMS17" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A.
+Dujella, M. Kazalicki, M. Mikić, and M. Szikszai, <span>“There are
+infinitely many rational <span>Diophantine</span> sextuples,”</span>
+<em>International Mathematics Research Notices</em>, vol. 2017, no. 2,
+pp. 490–508, 2017, doi: <a href="https://doi.org/10.1093/imrn/rnv376">10.1093/imrn/rnv376</a>.</div>
+</div>
+<div class="csl-entry" id="ref-Piezas16" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">T.
+I. Piezas, <span>“Extending rational <span>Diophantine</span> triples to
+sextuples.”</span> [Online]. Available: <a href="https://mathoverflow.net/questions/233538/extending-rational-diophantine-triples-to-sextuples">https://mathoverflow.net/questions/233538/extending-rational-diophantine-triples-to-sextuples</a></div>
+</div>
+<div class="csl-entry" id="ref-DK17" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">A.
+Dujella and M. Kazalicki, <span>“More on <span>Diophantine</span>
+sextuples,”</span> in <em>Number theory – diophantine problems, uniform
+distribution and applications</em>, C. Elsholtz and P. Grabner, Eds.,
+Springer, 2017, pp. 227–235. doi: <a href="https://doi.org/10.1007/978-3-319-55357-3_11">10.1007/978-3-319-55357-3_11</a>.</div>
+</div>
+<div class="csl-entry" id="ref-Dujella00" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">A.
+Dujella, <span>“Diophantine triples and construction of high-rank
+elliptic curves over <span>Q</span> with three non-trivial 2-torsion
+points,”</span> <em>Rocky Mountain Journal of Mathematics</em>, vol. 30,
+no. 1, pp. 157–164, 2000.</div>
+</div>
+<div class="csl-entry" id="ref-ADP12" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">J.
+Aguirre, A. Dujella, and J. C. Peral, <span>“On the rank of elliptic
+curves coming from rational <span>Diophantine</span> triples,”</span>
+<em>Rocky Mountain Journal of Mathematics</em>, vol. 42, no. 6, pp.
+1759–1776, 2012, doi: <a href="https://doi.org/10.1216/RMJ-2012-42-6-1759">10.1216/RMJ-2012-42-6-1759</a>.</div>
+</div>
+<div class="csl-entry" id="ref-DP20" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">A.
+Dujella and J. C. Peral, <span>“High rank elliptic curves induced by
+rational <span>Diophantine</span> triples,”</span> <em>Glasnik
+Matematički</em>, vol. 55, no. 2, pp. 237–252, 2020, doi: <a href="https://doi.org/10.3336/gm.55.2.05">10.3336/gm.55.2.05</a>.</div>
+</div>
+<div class="csl-entry" id="ref-DKP21" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">A.
+Dujella, M. Kazalicki, and V. Petričević, <span>“Rational
+<span>Diophantine</span> sextuples containing two regular quadruples and
+one regular quintuple,”</span> <em>Acta Mathematica Spalatensia</em>,
+vol. 1, pp. 19–27, 2021, doi: <a href="https://doi.org/10.32817/ams.1.1.2">10.32817/ams.1.1.2</a>.</div>
+</div>
+<div class="csl-entry" id="ref-Zeng26" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">Z.
+Zeng, <span>“The regular neighbourhood of the parametric rational
+<span>Diophantine</span> sextuples, identically in <span class="nocase">Q(t)</span>.”</span> [Online]. Available: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7348699">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7348699</a></div>
+</div>
+<div class="csl-entry" id="ref-Dujella07" role="listitem">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">A.
+Dujella, <span>“On <span>Mordell–Weil</span> groups of elliptic curves
+induced by <span>Diophantine</span> triples,”</span> <em>Glasnik
+Matematički</em>, vol. 42, no. 1, pp. 3–18, 2007, doi: <a href="https://doi.org/10.3336/gm.42.1.01">10.3336/gm.42.1.01</a>.</div>
+</div>
+<div class="csl-entry" id="ref-Silverman09" role="listitem">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">J.
+H. Silverman, <em>The arithmetic of elliptic curves</em>, 2nd ed., vol.
+106. in Graduate texts in mathematics, vol. 106. New York: Springer,
+2009. doi: <a href="https://doi.org/10.1007/978-0-387-09494-6">10.1007/978-0-387-09494-6</a>.</div>
+</div>
+</div></section></main><footer class="paper-footer"><span>hillaxiom</span><a aria-label="Back to top" class="back-to-top" href="#top"><i class="fa-solid fa-arrow-up"></i></a></footer></div><script>
+(function () {
+  function openHashTarget() {
+    if (!window.location.hash) return;
+    var id = decodeURIComponent(window.location.hash.slice(1));
+    var target = document.getElementById(id);
+    if (!target) return;
+    var details = target.closest('details.appendix');
+    if (details) details.open = true;
+  }
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest('a[href^="#"]');
+    if (!link) return;
+    var id = decodeURIComponent(link.getAttribute('href').slice(1));
+    var target = document.getElementById(id);
+    if (!target) return;
+    var details = target.closest('details.appendix');
+    if (details) details.open = true;
+  });
+  window.addEventListener('hashchange', openHashTarget);
+  openHashTarget();
+})();
+</script></body></html>

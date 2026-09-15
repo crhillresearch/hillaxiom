@@ -315,7 +315,7 @@ section { padding: 1.8rem 0 2.4rem; }
 }
 .badge i { font-size: 0.6rem; }
 .badge.solved {
-  color: var(--bg);
+  color: var(--bg-raised);
   background: var(--accent);
   border-color: transparent;
 }
@@ -327,7 +327,7 @@ section { padding: 1.8rem 0 2.4rem; }
 .achievement h3 {
   font-family: var(--mono);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   margin-bottom: 0.4rem;
   color: var(--fg-strong);
 }
@@ -335,6 +335,11 @@ section { padding: 1.8rem 0 2.4rem; }
   color: var(--fg-soft);
   font-size: 0.84rem;
   flex: 1;
+  margin-top: 0.9rem;
+}
+.achievement-meta {
+  color: var(--dim);
+  font-size: 0.76rem;
 }
 .achievement-links {
   margin-top: 0.9rem;
@@ -373,22 +378,23 @@ section { padding: 1.8rem 0 2.4rem; }
 .paper-title a:hover { color: var(--accent-text); text-decoration: none; }
 .paper-desc {
   color: var(--fg-soft);
-  font-size: 0.89rem;
+  font-size: 0.92rem;
   margin-bottom: 0.1rem;
-  font-style: italic;
 }
 .paper-meta {
-  color: var(--dim);
-  font-size: 0.78rem;
-  margin-top: 0.2rem;
+  color: var(--fg-soft);
+  font-size: 0.89rem;
+  margin-top: 0.1rem;
 }
-.paper-meta::before { content: ">"; color: var(--accent); font-weight: 400; }
+
+.paper-meta::before { content: "> "; margin-right: 0.2rem; color: var(--accent); font-weight: 400; }
+
 .paper-links {
   display: flex;
-  flex-direction: column; 
+  flex-direction: row;
   gap: 0.4rem;
   align-items: flex-start;
-  margin-top: 0.2rem;
+  margin-top: 0.4rem;
 }
 .paper-links a {
   font-size: 0.7rem;
@@ -431,11 +437,22 @@ section { padding: 1.8rem 0 2.4rem; }
   margin-right: 0.5rem;
 }
 
+.paper-desc::before, .paper-desc::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--accent);
+}
+.paper-desc::before { content: "\f05a"; margin-right: 0.4rem; }
+/*.paper-desc::after { content: "\f10e"; margin-left: 0.5rem; }*/
+
 .group-header.diophantine::before {
   content: "\f1e0"; /* fa-share-nodes */
 }
-.group-header.rst::before {
-  content: "\f1e0"; /* fa-share-nodes */
+.group-header.math-py::before {
+  content: "\f5d2"; /* fa-atom */
+}
+.group-header.elliptic-curves::before {
+  content: "\f534"; /* fa-bezier-curve */
 }
 
 /* ---------- about ---------- */

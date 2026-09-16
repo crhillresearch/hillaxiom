@@ -1,0 +1,188 @@
+.intro h1 { margin-bottom: 0.2rem; }
+.intro { padding: 3.2rem 0 0 0; }
+
+
+
+
+
+  .records-sub {
+    color: var(--dim);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    max-width: 760px;
+    margin: 0.45rem 0 1.8rem;
+  }
+
+  .records-key {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 1rem;
+    margin: 0 0 1.2rem;
+    padding: 0 0 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--dim);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .records-key strong {
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+  }
+
+  .records-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .record-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    transition: border-color .2s, transform .2s;
+  }
+
+  .record-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+
+  .record-index {
+    position: absolute;
+    top: 0.55rem;
+    left: 0.7rem;
+    color: var(--dim);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+
+  .record-head {
+    min-height: 62px;
+    padding: 0.35rem 0.2rem 0.9rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .record-head h3 {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 1.42rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .record-head p {
+    margin: 0.2rem 0 0;
+    color: var(--dim);
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .rank-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .rank-cell {
+    min-width: 0;
+    padding: 0.9rem 0.7rem 0.8rem;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .rank-cell:last-child { border-right: 0; }
+
+  .rank-cell small {
+    display: block;
+    min-height: 2.1em;
+    margin-bottom: 0.2rem;
+    color: var(--dim);
+    font-size: 0.58rem;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  .rank-cell strong {
+    font-family: var(--mono);
+    font-size: 1.72rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .rank-cell.target strong { color: var(--accent); }
+
+  .specialized-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .specialized-row .rank-cell:first-child {
+    border-right: 1px solid var(--border);
+  }
+
+  .holder {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    margin-top: auto;
+    padding: 0.85rem 0.2rem 0.05rem;
+    color: var(--dim);
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+
+  .holder i {
+    color: var(--dim);
+    margin-top: 0.18rem;
+    font-size: 0.68rem;
+  }
+
+  .holder strong {
+    display: block;
+    color: var(--text);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.1rem;
+  }
+
+  .records-note {
+    color: var(--dim);
+    font-size: 0.76rem;
+    line-height: 1.6;
+    margin-top: 1.4rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .records-note code {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+  }
+
+  @media (max-width: 760px) {
+    .records-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 430px) {
+    .record-card { padding: 0.85rem; }
+    .record-head { padding-left: 1.8rem; }
+    .rank-cell { padding-left: 0.4rem; padding-right: 0.4rem; }
+    .rank-cell strong { font-size: 1rem; }
+    .rank-cell small { font-size: 0.53rem; }
+  }

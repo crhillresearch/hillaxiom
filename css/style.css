@@ -451,6 +451,10 @@ align-items: flex-start; display: flex; flex-direction: row; }
   content: "\f534"; /* fa-bezier-curve */
 }
 
+.group-header.physics::before {
+  content: "\f5d2"; /* fa-atom */
+}
+
 /* unlocked group headers */
 .group-header.high-rank::before {
   content: "\f091";

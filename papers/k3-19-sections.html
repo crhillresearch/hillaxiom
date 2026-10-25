@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nineteen Independent Sections from Two Quadratic Covers of an Elliptic K3 Surface · hillaxiom</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/paper.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        tags: 'ams'
+      },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="paper-page" id="top">
+  <div class="container">
+    <header>
+      <div class="masthead">
+        <a class="site-name" href="../index.html">hillaxiom</a>
+      </div>
+      <nav>
+        <a href="../pdf/k3-19-sections.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Download PDF</a>
+      </nav>
+    </header>
+    <main class="paper-content">
+      <h1 class="paper-doc-title">Nineteen Independent Sections from<br>Two Quadratic Covers of an Elliptic K3 Surface</h1>
+      <p class="paper-doc-authors">C. R. Hill · October 24, 2026</p>
+
+      <div class="paper-abstract"><span class="abstract-label">Abstract.</span>
+        I give two explicit quadratic covers of a rank-17 elliptic K3 fibration. Each cover adds a section; on their genus-one compositum, the seventeen inherited sections and the two new ones are independent. The parameter curve has a rational point of infinite order. This yields infinitely many elliptic curves over \(\mathbb{Q}\) of rank at least 19, and the fibers can be chosen to have trivial rational torsion. The exact section coordinates and a SageMath verification script are available in the companion repository. The numerical bound \(C(0)\ge 19\) was already known; this is a different explicit construction.
+      </div>
+
+      <h2 id="introduction">1. Introduction</h2>
+      <p>This started with <a href="https://elliptic-rank.icarm.cloud/curve/3900">curve #3900 on the ICARM Elliptic Curve Rank Leaderboard</a>, submitted by Ritik Jain. I used that curve as a starting point for a sequence of two-neighbor constructions. One of the resulting elliptic fibrations had seventeen independent sections over \(\mathbb{Q}(t)\). A search on that fibration then found a fiber at</p>
+      <div class="math display">\[t_0=\frac{15122}{33609}\]</div>
+      <p>with a stored lower bound of 27 independent rational points. That fiber was a useful clue: it gave a rational place to look for quadratic multisections. The rank-27 computation is part of the discovery story, not a premise of the rank-19 proof below.</p>
+      <p>Two multisections worked. Each is a quadratic cover of the \(t\)-line and adds one rational section after base change. Their compositum is a genus-one curve. If I parametrize the first quadratic cover, the second one becomes a quartic equation. This is where the quartic enters; the two original covers themselves are quadratic.</p>
+      <p>Here is the precise result. Let \(E/\mathbb{Q}(t)\) be the short Weierstrass model whose coefficient vectors are given in the permanent data archive <a href="#ref-3">[3]</a>. That archive also gives seventeen sections \(P_1,\ldots,P_{17}\) and the two sections constructed below. Let \(C\) be the smooth projective model of</p>
+      <div class="math display">\[r_1^2=q_1(t),\qquad r_2^2=q_2(t).\tag{1}\]</div>
+      <p>Here \(q_1,q_2\) are displayed in Section <a href="#k3-covers">2</a>.</p>
+      <div class="theorem">
+        <p><span class="theorem-label">Theorem 1.</span> <em>The curve \(C\) has genus one and infinitely many rational points. Over \(\mathbb{Q}(C)\), the elliptic curve \(E\) has at least nineteen independent sections. Infinitely many rational fibers \(E_t\) have rank at least nineteen and trivial rational torsion.</em></p>
+      </div>
+      <p>The proof uses exact identities and heights. The online certificate <a href="#ref-3">[3]</a> lists the coefficients and rational functions in full; its verifier checks the defining equations, the height matrices, the quadratic involutions, and the finite-field counts. The long coefficients stay in that companion archive so the argument here can be read without pages of integers.</p>
+      <p>Elkies previously reached the bound \(C(0)\ge 19\) using paired quadratic base changes on a rank-17 K3 surface <a href="#ref-2">[2]</a>. My result does not increase that number. The constructions are distinct: the parent height determinants are \(1152\) here and \(948\) for Elkies. Both fibrations have only irreducible singular fibers, and Elkies proves geometric Picard number \(19\) for his surface. If the parent K3 surfaces were isomorphic, the determinant ratio would be a rational square by the Néron–Severi discriminant formula <a href="#ref-5">[5]</a>. But \(1152/948=96/79\) is not a square. Dujella lists Hill (2026) alongside Elkies in his table of infinite families <a href="#ref-1">[1]</a>.</p>
+
+      <h2 id="k3-covers">2. The K3 surface and two quadratic covers</h2>
+      <p>Write the parent fibration as</p>
+      <div class="math display">\[E_t:\quad y^2=x^3+A(t)x+B(t),\qquad A,B\in\mathbb{Q}[t].\tag{2}\]</div>
+      <p>Here \(\deg A=8\) and \(\deg B=12\). The vectors of coefficients of \(A\) and \(B\), in increasing degree order, are the fields <code>a4_low_to_high</code> and <code>a6_low_to_high</code> in <code>data/parent-rank17.json</code> <a href="#ref-3">[3]</a>. This is a compact way to specify a model whose coefficients are too long to help a reader on the printed page. The same file gives the rational-function coordinates of the seventeen sections. Its discriminant has degree \(24\) and is squarefree, so the corresponding elliptic K3 surface has \(24\) fibers of type \(I_1\) and no reducible fibers.</p>
+      <p>The two branch polynomials are</p>
+      <div class="math display">\[q_1(t)=30015061720809t^2-20692173881368t+3538696407184.\tag{3}\]</div>
+      <div class="math display">\[q_2(t)=46784549960425t^2-29557331565600t+4702049024256.\tag{4}\]</div>
+      <p>Both are squarefree and \(\gcd(q_1,q_2)=1\). Thus their classes in \(\mathbb{Q}(t)^\times/\mathbb{Q}(t)^{\times 2}\) are independent. The compositum</p>
+      <div class="math display">\[\mathbb{Q}(C)=\mathbb{Q}(t)\bigl(\sqrt{q_1(t)},\sqrt{q_2(t)}\bigr)\]</div>
+      <p>is biquadratic over \(\mathbb{Q}(t)\). Its degree-four map to \(\mathbb{P}^1_t\) is branched at four distinct geometric points. Riemann–Hurwitz gives \(2g(C)-2=4(-2)+8=0\), hence \(g(C)=1\).</p>
+      <p>At \(t=t_0\) both radicands are squares:</p>
+      <div class="math display">\[\sqrt{q_1(t_0)}=\frac{6185869062}{11203},\qquad
+        \sqrt{q_2(t_0)}=\frac{31426768294}{33609}.\tag{5}\]</div>
+      <p>This gives a rational point on \(C\). To work with the parameter curve explicitly, parametrize the first conic by</p>
+      <div class="math display">\[t=\frac{N(u)}{D(u)},\qquad r_1=\frac{W(u)}{D(u)},\tag{6}\]</div>
+      <p>where</p>
+      <div class="math display">\[
+        \begin{aligned}
+        N(u)&amp;=\frac{14974938550}{289}+\frac{550744148}{17}u+4995486u^2,\\
+        D(u)&amp;=\frac{1957773675}{17}+74456844u+11774081u^2,\\
+        W(u)&amp;=\frac{18377134456116150}{289}+\frac{591506630529100}{17}u+4746709944790u^2.
+        \end{aligned}
+      \]</div>
+      <p>The identity \(q_1(N/D)=(W/D)^2\) holds coefficient by coefficient. The other equation becomes</p>
+      <div class="math display">\[w^2=F(u),\qquad F(u)=D(u)^2q_2\!\left(\frac{N(u)}{D(u)}\right).\tag{7}\]</div>
+      <p>This squarefree quartic has a square constant term. Its five coefficients are in <code>data/pair.json</code> <a href="#ref-3">[3]</a>. Equation (7), not either individual cover, is the genus-one quartic in the construction.</p>
+      <p>Write \(F(u)=au^4+bu^3+cu^2+du+e^2\), with \(e>0\). A Weierstrass model for \(C\) is</p>
+      <div class="math display">\[E_0:\quad Y^2=X^3+cX^2+(bd-4ae^2)X+e^2b^2+ad^2-4ace^2.\tag{8}\]</div>
+      <p>The birational map and the coordinates of the rational point \(P\in E_0(\mathbb{Q})\) corresponding to \(u=0\) are in the certificate <a href="#ref-3">[3]</a>. In the next section, \(P\) is shown to have infinite order.</p>
+
+      <h2 id="independence">3. Independence of the nineteen sections</h2>
+      <p>The exact section calculation is short to describe even though the coordinates are long. Let \(\chi\) denote the holomorphic Euler characteristic of the elliptic surface. For a nonzero section \(Q\) on one of the models used here, write its \(x\)-coordinate in lowest terms as \(x(Q)=N_Q/D_Q\). With only \(I_1\) fibers, Shioda’s height formula <a href="#ref-5">[5]</a> takes the particularly simple form</p>
+      <div class="math display">\[h(Q)=\max\{\deg N_Q,\ \deg D_Q+2\chi\},\qquad
+        \langle Q,R\rangle=\frac{h(Q+R)-h(Q)-h(R)}{2}.\tag{9}\]</div>
+      <p>The parent has \(\chi=2\); either degree-two pullback has \(\chi=4\). The certificate checks the Weierstrass identities and the squarefree discriminant of degree \(12\chi\) before using (9). All of these calculations take place in exact rational-function arithmetic.</p>
+      <p>For the parent, the seventeen sections \(P_1,\ldots,P_{17}\) have a positive definite height matrix \(G\) with</p>
+      <div class="math display">\[\det G=1152.\tag{10}\]</div>
+      <p>The first cover pulls them back and gives one additional section \(S_1\); the second gives \(S_2\). The section coordinates are listed in <code>data/cover-4339.json</code> and <code>data/cover-36773.json</code> <a href="#ref-3">[3]</a>. The labels in those file names are search identifiers, not degrees of the covers.</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Model</th><th>Sections checked</th><th>Discriminant</th><th>Height determinant</th></tr></thead>
+          <tbody>
+            <tr><td>Parent \(E/\mathbb{Q}(t)\)</td><td>17</td><td>squarefree, degree 24</td><td>1152</td></tr>
+            <tr><td>First quadratic pullback</td><td>18</td><td>squarefree, degree 48</td><td>452984832</td></tr>
+            <tr><td>Second quadratic pullback</td><td>18</td><td>squarefree, degree 48</td><td>452984832</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Each \(18\times18\) matrix is positive definite, and its upper-left \(17\times17\) block is \(2G\). The factor of two is the degree of the base change. This already proves rank at least 18 on each separate cover. To get nineteen on the compositum, one must also show that the two extra sections do not become dependent on each other.</p>
+      <p>Let \(\sigma_i\) change the sign of \(\sqrt{q_i}\) and fix the other square root. Direct substitution into the recorded rational functions shows</p>
+      <div class="math display">\[h\bigl(S_1-\sigma_1(S_1)\bigr)=12,\qquad
+        h\bigl(S_2-\sigma_2(S_2)\bigr)=12.\tag{11}\]</div>
+      <p>Every inherited \(P_j\) is fixed by both involutions, while \(\sigma_1\) fixes \(S_2\) and \(\sigma_2\) fixes \(S_1\). The two differences in (11) are nontorsion. Now suppose</p>
+      <div class="math display">\[n_1S_1+n_2S_2+\sum_{j=1}^{17}m_jP_j=O.\]</div>
+      <p>Applying \(\sigma_1-1\) gives \(n_1(\sigma_1(S_1)-S_1)=O\), so \(n_1=0\). Applying \(\sigma_2-1\) gives \(n_2=0\). Positive definiteness of \(G\) then forces every \(m_j=0\). This proves the section assertion in Theorem 1.</p>
+
+      <h2 id="trivial-torsion">4. Infinitely many trivial-torsion fibers</h2>
+      <p>The rational point of \(C\) from (5) maps to a point \(P\in E_0(\mathbb{Q})\). Its exact Weierstrass coordinates are stored as <code>auxiliary_point</code> in <code>data/pair.json</code> <a href="#ref-3">[3]</a>. The curve \(E_0\) has good reduction at \(31\) and \(37\), and exact point counts give</p>
+      <div class="math display">\[\#E_0(\mathbb{F}_{31})=30,\qquad \#E_0(\mathbb{F}_{37})=32.\]</div>
+      <p>Rational torsion has order dividing two. The group law on (8) gives \(2P\ne O\) exactly, so \(P\) has infinite order. Thus \(C(\mathbb{Q})\) is infinite.</p>
+      <p>The family (2) is nonconstant. By the specialization theorem <a href="#ref-6">[6]</a>, its nineteen independent sections remain independent on all but finitely many fibers arising from the multiples of \(P\). Since the map \(C\to\mathbb{P}^1_t\) is nonconstant, those multiples yield infinitely many distinct rational values of \(t\).</p>
+      <p>One can keep the torsion subgroup trivial along an infinite subsequence. At \(t_0=15122/33609\), the fiber is smooth at the following primes:</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>\(p\)</th><th>31</th><th>37</th><th>59</th></tr></thead>
+          <tbody>
+            <tr><th>\(\#E_{t_0}(\mathbb{F}_p)\)</th><td>42</td><td>46</td><td>71</td></tr>
+            <tr><th>\(\#E_0(\mathbb{F}_p)\)</th><td>30</td><td>32</td><td>72</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The first row of orders has gcd one, hence \(E_{t_0}(\mathbb{Q})\) has trivial torsion. The least common multiple of the second row is \(1440\). For every integer \(n\equiv1\pmod{1440}\), the reductions of \(nP\) and \(P\) agree at all three primes. The map from \(E_0\) to the \(t\)-line is regular at these reductions, so \(E_{t(nP)}\) has the same three reduced fibers as \(E_{t_0}\). Its rational torsion is therefore trivial. There are infinitely many such \(nP\), and specialization retains the nineteen sections for all but finitely many of them. This finishes the proof of Theorem 1.</p>
+
+      <h2 id="verification">5. Proof data and verification</h2>
+      <p>The proof data and verifier are available at a fixed revision of the <em>Rank Ledger</em> repository <a href="#ref-3">[3]</a>. Four JSON files contain the parent model, the two pullbacks, and the paired-cover data. They include every coefficient and section coordinate used here. From the <code>rank-19-genus-one-base-change</code> directory, the verification command is</p>
+      <p class="verification-command"><code>sage -python verify.py</code></p>
+      <p>It checks the section identities, the three height matrices, the cover maps and involutions, the auxiliary point, and the finite-field orders. The exact rank of the generic family, as opposed to the lower bound of nineteen, is not determined here.</p>
+
+      <h2 id="acknowledgments">Acknowledgments</h2>
+      <p>Special thanks to Andrej Dujella for his correspondence and for confirming the construction’s place in his table of infinite families <a href="#ref-1">[1]</a>. I thank Ritik Jain for the ICARM curve that set this search in motion. The ICARM Elliptic Curve Rank Leaderboard was used in this work and is supported by NSF grant DMS-2425401 <a href="#ref-4">[4]</a>.</p>
+
+      <h2 id="language-models">Use of language models</h2>
+      <p>Large language models were used for literature review, computational cross-checking, and manuscript editing. The research direction, structural ideas, and computational implementation were developed by the author.</p>
+
+      <div class="references" id="references">
+        <h2>References</h2>
+        <p id="ref-1">[1] Andrej Dujella. “High rank elliptic curves with prescribed torsion.” <a href="https://web.math.pmf.unizg.hr/~duje/tors/generic.html">Dujella’s table of infinite families</a>. Accessed 24 October 2026.</p>
+        <p id="ref-2">[2] Noam D. Elkies. “An elliptic K3 surface \(X/\mathbb{Q}(t)\) with Mordell–Weil rank 17, I: Formulas for \(X\) and base changes of rank 18 and 19.” <a href="https://arxiv.org/abs/2608.25406">arXiv:2608.25406</a>, 2026.</p>
+        <p id="ref-3">[3] C. R. Hill. “From 17 to 19: exact proof data and verification code.” <a href="https://github.com/crhillresearch/rank-ledger/tree/8a0b173820c1286eb4b78f3175827d1d0e1cc22c/rank-19-genus-one-base-change">Rank Ledger, fixed Git revision 8a0b173</a>, 2026.</p>
+        <p id="ref-4">[4] ICARM. “Elliptic curve rank leaderboard.” <a href="https://elliptic-rank.icarm.cloud/">ICARM Elliptic Curve Rank Leaderboard</a>. Accessed 24 October 2026.</p>
+        <p id="ref-5">[5] Matthias Schütt and Tetsuji Shioda. “Elliptic surfaces.” <em>Algebraic Geometry in East Asia—Seoul 2008</em>, pages 51–160, 2010.</p>
+        <p id="ref-6">[6] Joseph H. Silverman. “Heights and the specialization map for families of abelian varieties.” <em>Journal für die reine und angewandte Mathematik</em>, 342:197–211, 1983.</p>
+      </div>
+    </main>
+    <footer class="paper-footer">
+      <span>hillaxiom</span>
+      <a class="back-to-top" href="#top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+    </footer>
+  </div>
+</body>
+</html>

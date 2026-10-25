@@ -169,6 +169,11 @@ mjx-container[display="true"] {
   margin: 1.8rem auto;
   font-size: 0.9rem;
 }
+.paper-content .table-scroll { overflow-x: auto; }
+.paper-content .verification-command {
+  text-align: center;
+  margin: 1.2rem 0;
+}
 .paper-content th,
 .paper-content td {
   padding: 0.4rem 0.9rem;

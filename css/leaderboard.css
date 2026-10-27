@@ -313,7 +313,19 @@
   }
 
   @media (max-width: 620px) {
-    .records-scorebar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .records-scorebar { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+    .score-profile {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 0.65rem;
+      min-height: 2.5rem;
+      padding-left: 0.2rem;
+      font-size: 0.7rem;
+    }
+    .score-item { gap: 0.4rem; padding: 0.6rem 0.65rem; }
+    .score-label { font-size: 0.55rem; }
+    .score-item > strong { font-size: 0.95rem; }
   }
 
   @media (max-width: 430px) {
@@ -325,4 +337,8 @@
     .rank-credit { font-size: 0.6rem; }
     .score-avatar { width: 2rem; height: 2rem; }
     .score-photo-wrap { width: 2rem; height: 2rem; }
+    .score-item { grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.3rem; padding: 0.55rem 0.45rem; }
+    .score-item > i { font-size: 0.78rem; }
+    .score-label { font-size: 0.5rem; letter-spacing: 0.02em; }
+    .score-item > strong { font-size: 0.86rem; }
   }

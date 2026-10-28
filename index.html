@@ -27,12 +27,17 @@
   </header>
 
   <!-- hero -->
-  <section class="intro">
+  <section class="intro" hidden>
     <h1>Axiom <span class="">&#11005;</span> <em>Relational Primacy</em></h1>
     <p>
       Take relation as primitive; take object as derived.
     </p>
   </section>
+
+  <nav class="quick-links" aria-label="Explore">
+    <a href="leaderboard.html"><i class="fa-solid fa-star" aria-hidden="true"></i>Leaderboard</a>
+    <a href="open-problems.html"><i class="fa-solid fa-bug" aria-hidden="true"></i>Open Problems</a>
+  </nav>
 
   <!-- frameworks -->
   <!--section id="frameworks">
@@ -92,12 +97,6 @@
   <!-- papers -->
   <section id="papers">
     <h2 class="section-title">Papers</h2>
-
-    <div class="paper-group">
-      <h3 class="group-header physics">Physics</h3>
-
-      <!-- RST -->
-    </div>
 
     <div class="paper-group">
       <h3 class="group-header elliptic-curves">Elliptic Curves</h3>
@@ -161,37 +160,21 @@
   <section id="achievements">
     <h2 class="section-title">Unlocked</h2>
 
-    <!-- high rank -->
-    <div class="unlocked-group">
-      <div class="unlocked-heading">
-        <h3 class="group-header high-rank">High Rank</h3>
-        <div class="unlocked-links">
-          <a href="leaderboard.html" class="unlocked-link">
-            <i class="fa-solid fa-star"></i>
-            Leaderboard
-          </a>
-        </div>
-      </div>
-
-      <!-- no-go -->
-      <article class="unlocked">
-        <div class="unlocked-main">
-          <p>No high rank record broken.</p>
-        </div>
-      </article>
-
-    </div>
-    <!-- / high rank -->
-
     <div class="unlocked-group">
       <h3 class="group-header discoveries">Discoveries</h3>
 
       <article class="paper">
-        <i class="fa-solid fa-arrow-trend-up paper-icon" aria-hidden="true"></i>
+        <i class="fa-solid fa-infinity paper-icon" aria-hidden="true"></i>
         <div class="paper-main discovery-main">
           <div class="discovery-info">
-            <h3 class="paper-title">An elliptic-curve family of generic rank at least 19</h3>
-            <p class="discovery-date">Discovered <time datetime="2026-10-22">October 22, 2026</time></p>
+            <div class="discovery-heading">
+              <h3 class="paper-title">Infinite Elliptic-Curve Family</h3>
+              <div class="discovery-badges">
+                <span class="discovery-rank-badge" aria-label="Rank at least 19">rk &ge; 19</span>
+                <span class="discovery-torsion-badge" aria-label="Trivial rational torsion">tors = 0</span>
+              </div>
+            </div>
+            <p class="discovery-date"><time datetime="2026-10-22">October 22, 2026</time></p>
           </div>
           <div class="paper-links discovery-links">
             <a href="papers/k3-19-sections.html" target="_blank" rel="noopener">
@@ -206,28 +189,6 @@
         </div>
       </article>
     </div>
-
-    <!-- solved -->
-    <div class="unlocked-group">
-      <div class="unlocked-heading">
-        <h3 class="group-header solved">Solved</h3>
-        <div class="unlocked-links">
-          <a href="open-problems.html" class="unlocked-link">
-            <i class="fa-solid fa-bug"></i>
-            Open Problems
-          </a>
-        </div>
-      </div>
-
-      <!-- no-go -->
-      <article class="unlocked">
-        <div class="unlocked-main">
-          <p>No open problem solved.</p>
-        </div>
-      </article>
-
-    </div>
-    <!-- / solved -->
 
   </section>
 

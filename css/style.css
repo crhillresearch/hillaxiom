@@ -467,6 +467,16 @@ section { padding: 1.8rem 0 2.4rem; }
   font-size: 0.78rem;
   margin-top: 0.1rem;
 }
+.discovery-listed {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--fg-soft);
+  text-decoration: none;
+}
+.discovery-listing { margin-left: 0.75rem; }
+.discovery-listing i { color: var(--accent); }
+.discovery-listed:hover { color: var(--accent); }
 .discovery-main .discovery-links {
   margin: 0 0 0 auto;
 }

@@ -1,0 +1,49 @@
+.tools-intro { padding-bottom: 0.8rem; }
+.tools-intro p { color: var(--fg-soft); max-width: 38rem; }
+.tools-list { display: grid; gap: 0.65rem; padding-top: 1.4rem; }
+.tools-list .section-title { margin-bottom: 0.75rem; }
+.tool-card { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr) auto; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid var(--border); background: var(--bg-raised); color: var(--fg); }
+.tool-card:hover { border-color: var(--accent); text-decoration: none; }
+.tool-card-icon { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; background: var(--bg-inset); color: var(--accent); }
+.tool-card-copy { display: grid; gap: 0.2rem; min-width: 0; }
+.tool-card-copy strong { font-family: var(--mono); color: var(--fg-strong); font-size: 0.9rem; }
+.tool-card-copy span { color: var(--fg-soft); font-size: 0.78rem; }
+.tool-card-arrow { color: var(--dim); font-size: 0.75rem; }
+.tool-breadcrumb { display: inline-block; color: var(--fg-soft); font-size: 0.75rem; margin-top: 1.4rem; }
+.tool-breadcrumb:hover { color: var(--accent); }
+.builder-intro { padding: 1.2rem 0 1.5rem; }
+.builder-intro h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+.builder-intro p { color: var(--fg-soft); font-size: 0.88rem; max-width: 42rem; }
+.builder-form { display: grid; gap: 1.3rem; }
+.builder-panel { border: 1px solid var(--border); background: var(--bg-raised); padding: 1.2rem; }
+.builder-panel h2 { color: var(--fg-strong); font-family: var(--mono); font-size: 0.9rem; margin-bottom: 0.8rem; }
+.builder-panel p { color: var(--dim); font-size: 0.75rem; margin-bottom: 0.9rem; }
+.builder-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; }
+.builder-grid .wide { grid-column: 1 / -1; }
+.builder-field { display: grid; gap: 0.3rem; min-width: 0; }
+.builder-field label { color: var(--fg-soft); font-size: 0.75rem; font-weight: 500; }
+.builder-field input, .builder-field textarea { width: 100%; min-width: 0; padding: 0.55rem 0.65rem; border: 1px solid var(--border); border-radius: 2px; background: var(--bg); color: var(--fg-strong); font: 0.8rem var(--mono); }
+.builder-field textarea { min-height: 3.1rem; resize: vertical; }
+.builder-field input:focus, .builder-field textarea:focus { outline: 1px solid var(--accent); border-color: var(--accent); }
+.builder-field small { color: var(--dim); font-size: 0.68rem; }
+.section-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; gap: 0.6rem; align-items: end; margin-bottom: 0.75rem; }
+.builder-button { display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem; padding: 0.55rem 0.8rem; border: 1px solid var(--border); border-radius: 2px; background: var(--bg-inset); color: var(--fg); font: 500 0.75rem var(--sans); cursor: pointer; text-decoration: none; }
+.builder-button:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.builder-button.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.builder-button.primary:hover { background: #d1fa5d; color: var(--bg); }
+.builder-actions, .download-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.builder-output { margin-top: 1.3rem; }
+.builder-output[hidden] { display: none; }
+.builder-output pre { max-height: 16rem; overflow: auto; padding: 0.85rem; border: 1px solid var(--border); background: var(--bg); color: var(--fg-soft); font: 0.7rem/1.5 var(--mono); white-space: pre; }
+.builder-output h3 { color: var(--fg-strong); font: 500 0.78rem var(--mono); margin: 1rem 0 0.4rem; }
+.builder-message { min-height: 1.5rem; color: var(--accent); font-size: 0.78rem; }
+.builder-message.error { color: #ffad99; }
+@media (max-width: 560px) {
+  .builder-grid { grid-template-columns: 1fr; }
+  .builder-grid .wide { grid-column: auto; }
+  .builder-panel { padding: 1rem; }
+  .section-row { grid-template-columns: 1fr 1fr; }
+  .section-row .remove-section { grid-column: 1 / -1; justify-self: end; }
+  .tool-card { grid-template-columns: 2.2rem minmax(0, 1fr); gap: 0.75rem; }
+  .tool-card-arrow { display: none; }
+}

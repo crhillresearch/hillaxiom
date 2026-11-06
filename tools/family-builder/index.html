@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rank Hunter Family Builder &middot; hillaxiom</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../tools.css">
+<script src="builder.js" defer></script>
+</head>
+<body>
+<div class="container">
+  <header><div class="masthead"><a class="site-name" href="../../index.html">hillaxiom</a></div></header>
+  <a class="tool-breadcrumb" href="../"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> All tools</a>
+  <section class="intro builder-intro">
+    <h1>Rank Hunter <em>Family Builder</em></h1>
+    <p>Describe a one-parameter elliptic-curve family. Download its <code>plugin.json</code> and <code>family.json</code> files for Rank Hunter's <code>plugins/families/</code> directory.</p>
+  </section>
+  <main>
+    <form id="builder-form" class="builder-form">
+      <div class="builder-panel">
+        <h2>01 / Identity</h2>
+        <div class="builder-grid">
+          <div class="builder-field"><label for="family-name">Family name</label><input id="family-name" name="name" required placeholder="My elliptic family"></div>
+          <div class="builder-field"><label for="family-id">Plugin ID</label><input id="family-id" name="id" required pattern="[a-z][a-z0-9_]*" placeholder="my_elliptic_family"><small>Lowercase letters, digits and underscores; starts with a letter.</small></div>
+          <div class="builder-field wide"><label for="family-description">Description</label><textarea id="family-description" name="description" required placeholder="One-parameter family for rank searches."></textarea></div>
+          <div class="builder-field"><label for="family-version">Version</label><input id="family-version" name="version" required value="0.1.0" pattern="[0-9]+\.[0-9]+\.[0-9]+"></div>
+          <div class="builder-field"><label for="family-parameter">Parameter symbol</label><input id="family-parameter" name="parameter" required value="t" pattern="[A-Za-z_][A-Za-z0-9_]*"></div>
+          <div class="builder-field"><label for="validation-parameter">Validation specialization</label><input id="validation-parameter" name="validation" required value="1"><small>Choose a rational parameter value giving a smooth curve.</small></div>
+          <div class="builder-field"><label for="generic-rank">Declared generic rank (optional)</label><input id="generic-rank" name="rank" type="number" min="0" step="1" placeholder="Leave blank if unknown"><small>A claim only; the builder does not verify rank.</small></div>
+        </div>
+      </div>
+      <div class="builder-panel">
+        <h2>02 / Weierstrass model</h2>
+        <p>Enter the five exact Sage expressions for [a1, a2, a3, a4, a6] in your parameter. Use * for multiplication and ^ for powers.</p>
+        <div class="builder-grid">
+          <div class="builder-field"><label for="a1">a1</label><input id="a1" name="a1" required value="0"></div>
+          <div class="builder-field"><label for="a2">a2</label><input id="a2" name="a2" required value="0"></div>
+          <div class="builder-field"><label for="a3">a3</label><input id="a3" name="a3" required value="0"></div>
+          <div class="builder-field"><label for="a4">a4</label><input id="a4" name="a4" required placeholder="t^2 + 1"></div>
+          <div class="builder-field wide"><label for="a6">a6</label><input id="a6" name="a6" required placeholder="t^3 - 1"></div>
+        </div>
+      </div>
+      <div class="builder-panel">
+        <h2>03 / Exact sections <span id="section-count">(0)</span></h2>
+        <p>Add rational section coordinates only when known exactly. Rank Hunter checks them during validation; this page does not prove they lie on the curve.</p>
+        <div id="section-list"></div>
+        <button type="button" class="builder-button" id="add-section"><i class="fa-solid fa-plus" aria-hidden="true"></i> Add section</button>
+      </div>
+      <div class="builder-actions"><button class="builder-button primary" type="submit"><i class="fa-solid fa-code" aria-hidden="true"></i> Generate files</button></div>
+      <p id="builder-message" class="builder-message" role="status" aria-live="polite"></p>
+    </form>
+    <section id="builder-output" class="builder-output" hidden aria-label="Generated files">
+      <div class="download-actions">
+        <button class="builder-button" type="button" id="download-plugin"><i class="fa-solid fa-download" aria-hidden="true"></i> Download plugin.json</button>
+        <button class="builder-button" type="button" id="download-family"><i class="fa-solid fa-download" aria-hidden="true"></i> Download family.json</button>
+      </div>
+      <h3>plugin.json</h3><pre id="plugin-preview"></pre>
+      <h3>family.json</h3><pre id="family-preview"></pre>
+      <p style="margin-top:1rem;color:var(--dim);font-size:.75rem">Place both files in <code>plugins/families/&lt;plugin_id&gt;/</code>, then validate the plugin in Rank Hunter. Generation here checks form structure, not mathematical correctness.</p>
+    </section>
+  </main>
+  <footer>hillaxiom.com</footer>
+</div>
+</body>
+</html>

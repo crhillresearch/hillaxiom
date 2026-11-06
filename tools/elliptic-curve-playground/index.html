@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elliptic Curve Playground &middot; hillaxiom</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../tools.css">
+<link rel="stylesheet" href="playground.css">
+<script src="playground.js" defer></script>
+</head>
+<body>
+<div class="container">
+  <header><div class="masthead"><a class="site-name" href="../../index.html">hillaxiom</a></div></header>
+  <a class="tool-breadcrumb" href="../"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> All tools</a>
+  <section class="intro builder-intro">
+    <h1>Elliptic Curve <em>Playground</em></h1>
+    <p>Explore a Weierstrass curve over ℚ. Invariants and rational-point checks use exact arithmetic; the real plot is a numerical view.</p>
+  </section>
+  <main>
+    <div class="builder-panel">
+      <h2>01 / Curve</h2>
+      <p>Enter rational coefficients for y² + a1xy + a3y = x³ + a2x² + a4x + a6.</p>
+      <div class="curve-coefficients">
+        <div class="builder-field"><label for="a1">a1</label><input id="a1" value="0" spellcheck="false"></div>
+        <div class="builder-field"><label for="a2">a2</label><input id="a2" value="0" spellcheck="false"></div>
+        <div class="builder-field"><label for="a3">a3</label><input id="a3" value="0" spellcheck="false"></div>
+        <div class="builder-field"><label for="a4">a4</label><input id="a4" value="-1" spellcheck="false"></div>
+        <div class="builder-field"><label for="a6">a6</label><input id="a6" value="1" spellcheck="false"></div>
+      </div>
+      <div class="explorer-actions"><button id="analyze-button" class="builder-button primary" type="button">Analyze curve</button><button id="example-button" class="builder-button" type="button">Load example</button></div>
+      <p id="curve-status" class="explorer-status" role="status" aria-live="polite"></p>
+      <div id="invariants" class="invariant-grid" hidden></div>
+    </div>
+    <div class="builder-panel plot-panel">
+      <div class="plot-heading"><h2>02 / Real locus</h2><label for="plot-range">x range <input id="plot-range" type="number" min="1" max="100" step="1" value="4"></label></div>
+      <canvas id="curve-plot" width="800" height="480" role="img" aria-label="Real plot of the current elliptic curve"></canvas>
+      <p>Plot points are approximate. Exact rational points appear below.</p>
+    </div>
+    <div class="builder-panel point-panel">
+      <h2>03 / Check a point</h2>
+      <div class="builder-grid"><div class="builder-field"><label for="point-x">x</label><input id="point-x" value="0" spellcheck="false"></div><div class="builder-field"><label for="point-y">y</label><input id="point-y" value="1" spellcheck="false"></div></div>
+      <div class="explorer-actions"><button id="check-point" class="builder-button" type="button">Check point</button></div>
+      <p id="point-status" class="explorer-status" role="status" aria-live="polite"></p>
+    </div>
+    <div class="builder-panel point-panel">
+      <h2>04 / Find rational points</h2>
+      <p>Search reduced x = p/q with |p| ≤ the numerator bound and 1 ≤ q ≤ the denominator bound. For each x, both rational y values are checked exactly. This is a bounded search, not a complete point list.</p>
+      <div class="builder-grid"><div class="builder-field"><label for="numerator-bound">Maximum |p|</label><input id="numerator-bound" type="number" min="1" max="200" step="1" value="30"></div><div class="builder-field"><label for="denominator-bound">Maximum q</label><input id="denominator-bound" type="number" min="1" max="30" step="1" value="5"></div></div>
+      <div class="explorer-actions"><button id="search-points" class="builder-button primary" type="button">Search points</button><button id="stop-search" class="builder-button" type="button" hidden>Stop</button></div>
+      <p id="search-status" class="explorer-status" role="status" aria-live="polite"></p>
+      <div id="point-results" class="point-results" hidden></div>
+    </div>
+  </main>
+  <footer>hillaxiom.com</footer>
+</div>
+</body>
+</html>

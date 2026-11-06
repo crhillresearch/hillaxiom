@@ -1,0 +1,18 @@
+.curve-coefficients { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 0.65rem; }
+.plot-panel, .point-panel { margin-top: 1rem; }
+.plot-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: start; }
+.plot-heading label { color: var(--fg-soft); font-size: 0.7rem; white-space: nowrap; }
+.plot-heading input { width: 3.4rem; margin-left: 0.3rem; padding: 0.25rem; border: 1px solid var(--border); background: var(--bg); color: var(--fg); font: 0.75rem var(--mono); }
+#curve-plot { display: block; width: 100%; height: auto; aspect-ratio: 5/3; border: 1px solid var(--border); background: #171c20; }
+.invariant-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0.5rem; }
+.invariant-grid[hidden], .point-results[hidden] { display: none; }
+.invariant-cell { padding: 0.55rem 0.7rem; background: var(--bg); border: 1px solid var(--border); min-width: 0; }
+.invariant-cell span { display: block; color: var(--dim); font: 0.65rem var(--mono); }
+.invariant-cell strong { display: block; overflow-wrap: anywhere; color: var(--fg-strong); font: 500 0.8rem var(--mono); }
+.explorer-actions { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 0.9rem; }
+.explorer-status { min-height: 1.5rem; margin: 0.8rem 0 0; color: var(--fg-soft); font-size: 0.8rem; }
+.explorer-status.good { color: var(--accent); }
+.explorer-status.bad { color: #ffad99; }
+.point-results { display: flex; flex-wrap: wrap; gap: 0.4rem; max-height: 18rem; overflow: auto; }
+.point-chip { padding: 0.3rem 0.55rem; border: 1px solid var(--border); background: var(--bg); color: var(--fg); font: 0.7rem var(--mono); overflow-wrap: anywhere; }
+@media (max-width: 560px) { .curve-coefficients { grid-template-columns: repeat(3,minmax(0,1fr)); } .invariant-grid { grid-template-columns: 1fr; } }

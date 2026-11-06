@@ -592,6 +592,9 @@ align-items: flex-start; display: flex; flex-direction: row; }
 .group-header.discoveries::before {
   content: "\f3a5"; /* fa-gem */
 }
+.group-header.tools::before {
+  content: "\f0ad"; /* fa-wrench */
+}
 
 /* -- lists -- */
 ul {
@@ -685,8 +688,39 @@ footer {
 .home-page .site-header-nav i { font-size: 0.75rem; }
 .home-page .mobile-explore { display: none; }
 .home-page .container > #software { padding-top: 5.4rem; }
-.home-page .container > section + section { margin-top: 1rem; }
+.home-page .container > section + section { margin-top: 4rem; }
 .home-page .software-links { flex-wrap: wrap; gap: 0.3rem 1.1rem; }
+.home-page .software-tools { margin-top: 2rem; }
+.home-page .software-tools-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.5rem;
+}
+.home-page .software-tools .group-header { padding: 0; border: 0; margin: 0; }
+.home-page .tools-browse { color: var(--fg-soft); font-size: 0.72rem; white-space: nowrap; }
+.home-page .tools-browse:hover { color: var(--accent); text-decoration: none; }
+.home-page .tools-browse i { margin-left: 0.3rem; font-size: 0.65rem; }
+.home-page .tool-preview-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.65rem; }
+.home-page .tool-preview {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: var(--fg);
+}
+.home-page .tool-preview-icon { flex: none; color: var(--accent); font-size: 0.9rem; }
+.home-page .tool-preview span { min-width: 0; }
+.home-page .tool-preview strong { display: block; font-family: var(--mono); font-size: 0.82rem; font-weight: 500; }
+.home-page .tool-preview small { display: block; color: var(--dim); font-size: 0.72rem; }
+.home-page .tool-preview:hover { border-color: var(--accent); text-decoration: none; }
+.home-page .tool-preview:hover strong { color: var(--accent); }
 .home-page .unlocked-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -792,10 +826,11 @@ footer {
 }
 
 @media (max-width: 680px) {
+  .home-page .tool-preview-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .home-page .site-header-main { padding: 1.55rem 0 1rem; }
   .home-page .site-header-nav {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.15rem;
     padding: 0.55rem 0 0.7rem;
   }
@@ -828,7 +863,7 @@ footer {
   .home-page .mobile-explore a:focus-visible { color: var(--accent); text-decoration: none; }
   .home-page .mobile-explore i { color: var(--accent); font-size: 0.7rem; }
   .home-page .container > #software { padding-top: 1.8rem; }
-  .home-page .container > section + section { margin-top: 0.6rem; }
+  .home-page .container > section + section { margin-top: 2.4rem; }
   .home-page .container > section { padding-top: 1.2rem; padding-bottom: 1.4rem; }
   .home-page .software-item { padding: 1rem 1.1rem; }
   .home-page .software-links { gap: 0.35rem 0.85rem; }
@@ -845,6 +880,7 @@ footer {
 }
 
 @media (max-width: 560px) {
+  .home-page .tool-preview-list { grid-template-columns: 1fr; }
   .container { padding-right: 1rem; padding-left: 1rem; }
   .home-page .site-header-inner,
   .home-page .footer-inner { padding-right: 1rem; padding-left: 1rem; }

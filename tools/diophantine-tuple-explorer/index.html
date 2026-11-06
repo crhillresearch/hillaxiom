@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diophantine Tuple Explorer &middot; hillaxiom</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../tools.css">
+<link rel="stylesheet" href="explorer.css">
+<script src="explorer.js" defer></script>
+</head>
+<body>
+<div class="container">
+  <header><div class="masthead"><a class="site-name" href="../../index.html">hillaxiom</a></div></header>
+  <a class="tool-breadcrumb" href="../"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> All tools</a>
+  <section class="intro builder-intro">
+    <h1>Diophantine <em>Tuple Explorer</em></h1>
+    <p>Check whether every pairwise product plus one is a rational square. Then search for rational numbers that extend the tuple within your bounds. All calculations use exact integers.</p>
+  </section>
+  <main>
+    <div class="builder-panel">
+      <h2>01 / Your tuple</h2>
+      <div class="builder-field">
+        <label for="tuple-input">Distinct, nonzero rational numbers</label>
+        <textarea id="tuple-input" rows="3" spellcheck="false">1, 3, 8</textarea>
+        <small>Separate entries with commas, spaces, or new lines. Fractions such as 3/4 are accepted.</small>
+      </div>
+      <div class="explorer-actions">
+        <button id="check-button" class="builder-button primary" type="button"><i class="fa-solid fa-check" aria-hidden="true"></i> Check tuple</button>
+        <button id="example-button" class="builder-button" type="button">Load {1, 3, 8}</button>
+      </div>
+      <p id="tuple-status" class="explorer-status" role="status" aria-live="polite"></p>
+      <div id="pair-results" class="pair-results" hidden></div>
+    </div>
+    <div class="builder-panel explorer-search">
+      <h2>02 / Find extensions</h2>
+      <h3 class="explorer-subheading">Check a specific candidate</h3>
+      <div class="builder-field"><label for="candidate-input">Rational number to add</label><input id="candidate-input" type="text" inputmode="text" spellcheck="false" placeholder="-38081/2275280"><small>Checks one exact fraction, regardless of the search bounds below.</small></div>
+      <div class="explorer-actions"><button id="candidate-button" class="builder-button" type="button"><i class="fa-solid fa-check" aria-hidden="true"></i> Check candidate</button></div>
+      <p id="candidate-status" class="explorer-status" role="status" aria-live="polite"></p>
+      <div id="candidate-results" class="pair-results" hidden></div>
+      <h3 class="explorer-subheading bounded-heading">Search within bounds</h3>
+      <p>Search reduced fractions p/q with 1 ≤ q ≤ the denominator bound and 0 &lt; |p| ≤ the numerator bound. Existing tuple members are excluded.</p>
+      <div class="builder-grid">
+        <div class="builder-field"><label for="numerator-bound">Maximum |numerator|</label><input id="numerator-bound" type="number" min="1" max="500" step="1" value="200"></div>
+        <div class="builder-field"><label for="denominator-bound">Maximum denominator</label><input id="denominator-bound" type="number" min="1" max="50" step="1" value="1"></div>
+      </div>
+      <div class="explorer-actions">
+        <button id="search-button" class="builder-button primary" type="button"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Search extensions</button>
+        <button id="stop-button" class="builder-button" type="button" hidden>Stop</button>
+      </div>
+      <p id="search-status" class="explorer-status" role="status" aria-live="polite"></p>
+      <div id="extension-results" class="extension-results" hidden></div>
+    </div>
+  </main>
+  <footer>hillaxiom.com</footer>
+</div>
+</body>
+</html>

@@ -414,8 +414,30 @@
   }
 
   @media (max-width: 620px) {
-    .torsion-records-grid { overflow-x: auto; }
-    .record-card.torsion-record-card { width: 800px; }
+    .intro { padding-top: 2rem; }
+    .torsion-records-grid { overflow-x: visible; }
+    .record-card.torsion-record-card:not(.other-record-card) { width: auto; grid-template-columns: minmax(0, 1fr); }
+    .torsion-record-card:not(.other-record-card) .record-head {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: flex-start;
+      gap: 0.6rem;
+      padding-top: 0.45rem;
+      padding-bottom: 0.45rem;
+    }
+    .torsion-record-card:not(.other-record-card) .rank-block { grid-template-columns: minmax(0, 1fr); }
+    .torsion-record-card:not(.other-record-card) .rank-cell {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.1rem 0.5rem;
+      padding: 0.5rem 0.35rem;
+      border-right: 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .torsion-record-card:not(.other-record-card) .rank-cell:last-child { border-bottom: 0; }
+    .torsion-record-card:not(.other-record-card) .rank-label { grid-column: 1; grid-row: 1; font-size: 0.65rem; }
+    .torsion-record-card:not(.other-record-card) .rank-cell > strong { grid-column: 2; grid-row: 1; font-size: 1rem; }
+    .torsion-record-card:not(.other-record-card) .rank-credit { grid-column: 1 / -1; grid-row: 2; font-size: 0.62rem; }
     .other-records-grid { overflow-x: visible; }
     .record-card.torsion-record-card.other-record-card { grid-template-columns: minmax(0, 1fr); width: auto; }
     .records-scorebar { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }

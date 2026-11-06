@@ -683,7 +683,8 @@ footer {
 .home-page .site-header-nav a:focus-visible { background: #283036; color: var(--accent); }
 .home-page .site-header-nav-secondary { display: flex; align-items: center; gap: 0.25rem; margin-left: auto; }
 .home-page .site-header-nav i { font-size: 0.75rem; }
-.home-page .container > section:first-child { padding-top: 5.4rem; }
+.home-page .mobile-explore { display: none; }
+.home-page .container > #software { padding-top: 5.4rem; }
 .home-page .container > section + section { margin-top: 1rem; }
 .home-page .software-links { flex-wrap: wrap; gap: 0.3rem 1.1rem; }
 .home-page .unlocked-grid {
@@ -791,18 +792,66 @@ footer {
 }
 
 @media (max-width: 680px) {
-  .home-page .site-header-main { padding: 2rem 0 1.4rem; }
-  .home-page .site-header-nav-secondary { flex-wrap: wrap; }
+  .home-page .site-header-main { padding: 1.55rem 0 1rem; }
+  .home-page .site-header-nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.15rem;
+    padding: 0.55rem 0 0.7rem;
+  }
+  .home-page .site-header-nav > a {
+    justify-content: center;
+    padding: 0.45rem 0.15rem;
+    font-size: 0.7rem;
+  }
+  .home-page .site-header-nav a { font-weight: 500; }
+  .home-page .site-header-nav-secondary { display: none; }
+  .home-page .mobile-explore {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.2rem;
+    margin-top: 0.65rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .home-page .mobile-explore a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0;
+    color: var(--fg-soft);
+    font-size: 0.72rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .home-page .mobile-explore a:hover,
+  .home-page .mobile-explore a:focus-visible { color: var(--accent); text-decoration: none; }
+  .home-page .mobile-explore i { color: var(--accent); font-size: 0.7rem; }
+  .home-page .container > #software { padding-top: 1.8rem; }
+  .home-page .container > section + section { margin-top: 0.6rem; }
+  .home-page .container > section { padding-top: 1.2rem; padding-bottom: 1.4rem; }
+  .home-page .software-item { padding: 1rem 1.1rem; }
+  .home-page .software-links { gap: 0.35rem 0.85rem; }
   .home-page .unlocked-grid { grid-template-columns: 1fr; }
-  .home-page .discovery-main .discovery-links { margin-left: 0; }
-  .home-page .footer-top { grid-template-columns: 1fr; gap: 1.75rem; }
+  .home-page .unlocked-column { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
+  .home-page .discovery-main { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+  .home-page .discovery-main .discovery-links { width: auto; margin: 0; }
+  .home-page .site-footer { margin-top: 2rem; padding-top: 2.25rem; }
+  .home-page .footer-top { grid-template-columns: 1fr; justify-items: center; gap: 1.5rem; text-align: center; }
+  .home-page .footer-about { display: flex; flex-direction: column; align-items: center; }
+  .home-page .footer-socials { justify-content: center; }
   .home-page .footer-photo { width: 120px; }
-  .home-page .site-footer { padding-top: 2.25rem; }
+  .home-page .footer-bottom { justify-content: center; }
 }
 
 @media (max-width: 560px) {
-  .home-page #papers .publication { grid-template-columns: 1.2rem minmax(0, 1fr); gap: 0.35rem 0.8rem; }
+  .container { padding-right: 1rem; padding-left: 1rem; }
+  .home-page .site-header-inner,
+  .home-page .footer-inner { padding-right: 1rem; padding-left: 1rem; }
+  .home-page .site-header-nav > a { font-size: 0.68rem; }
+  .home-page #papers .publication { grid-template-columns: 1.2rem minmax(0, 1fr); gap: 0.35rem 0.65rem; padding: 0.75rem 0; }
   .home-page #papers .publication .paper-icon { grid-row: 1 / span 2; align-self: start; margin-top: 0.3rem; }
   .home-page #papers .publication .paper-main { grid-column: 2; grid-row: 1; }
   .home-page #papers .publication .paper-links { grid-column: 2; grid-row: 2; justify-content: flex-start; }
+  .home-page .unlocked-group .paper { padding: 0.75rem 0; }
 }

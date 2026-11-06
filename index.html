@@ -10,34 +10,28 @@
 <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"-->
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="home-page">
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="site-header-main">
+      <span class="site-header-kicker">C. R. Hill / Independent research</span>
+      <h1><a class="site-header-brand" href="index.html">hillaxiom</a></h1>
+    </div>
+    <nav class="site-header-nav" aria-label="Primary">
+      <a href="#software">Code</a>
+      <a href="#papers">Papers</a>
+      <a href="#achievements">Discoveries</a>
+      <a href="#about">About</a>
+      <div class="site-header-nav-secondary">
+        <a href="leaderboard.html"><i class="fa-solid fa-star" aria-hidden="true"></i> Leaderboard</a>
+        <a href="open-problems.html"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Resources</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
 <div class="container">
-
-  <!-- masthead -->
-  <header>
-    <div class="masthead">
-      <a class="site-name" href="index.html">hillaxiom</a>
-    </div>
-    <nav>
-      <a href="https://orcid.org/0009-0001-0580-3561" aria-label="ORCiD"><i class="fab fa-orcid"></i></a>
-      <a href="https://x.com/crhillresearch" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://github.com/crhillresearch" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    </nav>
-  </header>
-
-  <!-- hero -->
-  <section class="intro" hidden>
-    <h1>Axiom <span class="">&#11005;</span> <em>Relational Primacy</em></h1>
-    <p>
-      Take relation as primitive; take object as derived.
-    </p>
-  </section>
-
-  <nav class="quick-links" aria-label="Explore">
-    <a href="leaderboard.html"><i class="fa-solid fa-star" aria-hidden="true"></i>Leaderboard</a>
-    <a href="open-problems.html"><i class="fa-solid fa-bug" aria-hidden="true"></i>Open Problems</a>
-  </nav>
 
   <!-- code -->
   <section id="software">
@@ -53,13 +47,21 @@
             <i class="fa-solid fa-code-branch" aria-hidden="true"></i> dev/0.10.x
           </a>
         </div>
-        <p class="software-desc">Open-source computational search platform for discovering and rigorously studying high-rank elliptic curves over Q.</p>
+        <p class="software-desc">Open-source computational search platform for discovering and rigorously studying high-rank elliptic curves.</p>
         <div class="software-links">
           <a href="https://github.com/crhillresearch/rank-hunter/"><i class="fa-brands fa-github"></i> source</a>
           <a href="https://github.com/crhillresearch/rh-plugins/"><i class="fa-brands fa-github"></i> plugins</a>
           <a href="https://docs.rankhunter.net"><i class="fa-solid fa-book"></i> docs</a>
           <a href="https://rankhunter.net"><i class="fa-solid fa-up-right-from-square"></i> rankhunter.net</a>
         </div>
+      </div>
+
+      <div class="software-item" hidden>
+        <div class="software-head">
+          <h3 class="software-name">Lava</h3>
+          <span class="software-status-badge">In development</span>
+        </div>
+        <p class="software-desc">Lava brings exact arithmetic geometry to an interactive, Magma-style workspace for elliptic curves and beyond.</p>
       </div>
 
     </div>
@@ -70,56 +72,41 @@
     <h2 class="section-title">Papers</h2>
 
     <div class="paper-group">
-      <h3 class="group-header elliptic-curves">Elliptic Curves</h3>
-
       <!-- Nineteen Independent Sections -->
-      <article class="paper">
-        <i class="fa-regular fa-file-lines paper-icon"></i>
+      <article class="paper publication">
+        <i class="fa-regular fa-file-lines paper-icon" aria-hidden="true"></i>
         <div class="paper-main">
+          <div class="publication-meta"><time datetime="2026-10-24">October 24, 2026</time><span aria-hidden="true">&middot;</span><span>5 pages</span></div>
           <h3 class="paper-title"><a href="papers/k3-19-sections.html">Nineteen Independent Sections from Two Quadratic Covers of an Elliptic K3 Surface</a></h3>
-
-          <div class="paper-meta">
-            <span>October 24, 2026</span> &middot; <span>5 pages</span> &middot; <span>Preprint</span>
-          </div>
-
-          <div class="paper-links">
-            <a href="pdf/k3-19-sections.pdf" target="_blank" rel="noopener" class="paper-link">
-              <i class="fa-solid fa-file-pdf"></i>
-              PDF
-            </a>
-            <a href="papers/k3-19-sections.html" target="_blank" rel="noopener" class="paper-link">
-              <i class="fa-regular fa-file-code"></i>
-              HTML
-            </a>
-          </div>
+        </div>
+        <div class="paper-links">
+          <a href="pdf/k3-19-sections.pdf" target="_blank" rel="noopener" class="paper-link">
+            <i class="fa-solid fa-file-pdf"></i>
+            PDF
+          </a>
+          <a href="papers/k3-19-sections.html" target="_blank" rel="noopener" class="paper-link">
+            <i class="fa-regular fa-file-code"></i>
+            HTML
+          </a>
         </div>
       </article>
 
       <!-- Regularity-Selected Four-Rank Piezas Families -->
-      <article class="paper">
-        <i class="fa-regular fa-file-lines paper-icon"></i>
+      <article class="paper publication">
+        <i class="fa-regular fa-file-lines paper-icon" aria-hidden="true"></i>
         <div class="paper-main">
+          <div class="publication-meta"><time datetime="2026-09-12">September 12, 2026</time><span aria-hidden="true">&middot;</span><span>21 pages</span></div>
           <h3 class="paper-title"><a href="papers/dmt-001.html">Regularity-Selected Generic Rank at Least Four in the Piezas Diophantine Sextuple</a></h3>
-          
-          <div class="paper-meta">
-            <span>September 12, 2026</span> &middot; <span>21 pages</span> &middot; <span>Preprint</span>
-          </div>
-
-          <div class="paper-links">
-            <a href="pdf/dmt-001.pdf" target="_blank" rel="noopener" class="paper-link">
-              <i class="fa-solid fa-file-pdf"></i>
-              PDF
-            </a>
-            <a href="papers/dmt-001.html" target="_blank" rel="noopener" class="paper-link">
-              <i class="fa-regular fa-file-code"></i>
-              HTML
-            </a>
-            <a href="https://www.paper2audio.com/d/CQjoa77s" target="_blank" rel="noopener" class="paper-link">
-              <i class="fa-solid fa-headphones"></i>
-              Audio
-            </a>
-          </div>
-          
+        </div>
+        <div class="paper-links">
+          <a href="pdf/dmt-001.pdf" target="_blank" rel="noopener" class="paper-link">
+            <i class="fa-solid fa-file-pdf"></i>
+            PDF
+          </a>
+          <a href="papers/dmt-001.html" target="_blank" rel="noopener" class="paper-link">
+            <i class="fa-regular fa-file-code"></i>
+            HTML
+          </a>
         </div>
       </article>
 
@@ -131,116 +118,95 @@
   <section id="achievements">
     <h2 class="section-title">Unlocked</h2>
 
-    <div class="unlocked-group">
-      <h3 class="group-header high-rank">High Rank</h3>
-    </div>
-
-    <div class="unlocked-group">
-      <h3 class="group-header discoveries">Discoveries</h3>
-
-      <article class="paper">
-        <i class="fa-solid fa-infinity paper-icon" aria-hidden="true"></i>
-        <div class="paper-main discovery-main">
-          <div class="discovery-info">
-            <div class="discovery-heading">
-              <h3 class="paper-title">Infinite Elliptic-Curve Family</h3>
-              <div class="discovery-badges">
-                <span class="discovery-rank-badge" aria-label="Rank at least 6">rk &ge; 6</span>
-                <span class="discovery-torsion-badge" aria-label="Rational torsion group Z/4Z">tors = ℤ/4ℤ</span>
-              </div>
-            </div>
-            <p class="discovery-date"><time datetime="2026-11-05">November 5, 2026</time></p>
-          </div>
-          <div class="paper-links discovery-links">
-            <a href="https://github.com/crhillresearch/rank-ledger/tree/main/c4-rank-6-genus-one-family" target="_blank" rel="noopener">
-              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-              Proof
-            </a>
-          </div>
+    <div class="unlocked-grid">
+      <div class="unlocked-column">
+        <div class="unlocked-group high-rank-group">
+          <h3 class="group-header high-rank">High Rank</h3>
         </div>
-      </article>
 
-      <article class="paper">
-        <i class="fa-solid fa-infinity paper-icon" aria-hidden="true"></i>
-        <div class="paper-main discovery-main">
-          <div class="discovery-info">
-            <div class="discovery-heading">
-              <h3 class="paper-title">Infinite Elliptic-Curve Family</h3>
-              <div class="discovery-badges">
-                <span class="discovery-rank-badge" aria-label="Rank at least 11">rk &ge; 11</span>
-                <span class="discovery-torsion-badge" aria-label="Rational torsion group Z/2Z">tors = ℤ/2ℤ</span>
-              </div>
-            </div>
-            <p class="discovery-date"><time datetime="2026-11-03">November 3, 2026</time> <span class="discovery-listing"><i class="fa-solid fa-check" aria-hidden="true"></i> Listed on </span><a class="discovery-listed" href="https://web.math.pmf.unizg.hr/~duje/tors/generic.html" target="_blank" rel="noopener">Dujella's table</a></p>
-          </div>
-          <div class="paper-links discovery-links">
-            <a href="https://github.com/crhillresearch/rank-ledger/tree/main/c2-rank-11-genus-one-family" target="_blank" rel="noopener">
-              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-              Proof
-            </a>
-          </div>
+        <div class="unlocked-group solved-group">
+          <h3 class="group-header solved">Solved</h3>
         </div>
-      </article>
-      <article class="paper">
-        <i class="fa-solid fa-infinity paper-icon" aria-hidden="true"></i>
-        <div class="paper-main discovery-main">
-          <div class="discovery-info">
-            <div class="discovery-heading">
-              <h3 class="paper-title">Infinite Elliptic-Curve Family</h3>
-              <div class="discovery-badges">
-                <span class="discovery-rank-badge" aria-label="Rank at least 19">rk &ge; 19</span>
-                <span class="discovery-torsion-badge" aria-label="Trivial rational torsion">tors = 0</span>
-              </div>
+      </div>
+
+      <div class="unlocked-group">
+        <h3 class="group-header discoveries">Discoveries</h3>
+
+        <article class="paper">
+          <div class="paper-main discovery-main">
+            <div class="discovery-info">
+              <h3 class="paper-title">Infinite family with ℤ/4ℤ torsion</h3>
+              <p class="discovery-date"><span class="discovery-rank-badge" aria-label="Rank at least 6">rk &ge; 6</span><time datetime="2026-11-05">November 5, 2026</time></p>
             </div>
-            <p class="discovery-date"><time datetime="2026-10-22">October 22, 2026</time> <span class="discovery-listing"><i class="fa-solid fa-check" aria-hidden="true"></i> Listed on </span><a class="discovery-listed" href="https://web.math.pmf.unizg.hr/~duje/tors/generic.html" target="_blank" rel="noopener">Dujella's table</a></p>
+            <div class="paper-links discovery-links">
+              <a href="https://github.com/crhillresearch/rank-ledger/tree/main/c4-rank-6-genus-one-family" target="_blank" rel="noopener">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                Proof
+              </a>
+            </div>
           </div>
-          <div class="paper-links discovery-links">
-            <a href="papers/k3-19-sections.html" target="_blank" rel="noopener">
-              <i class="fa-regular fa-file-code" aria-hidden="true"></i>
-              Paper
-            </a>
-            <a href="https://github.com/crhillresearch/rank-ledger/tree/main/rank-19-genus-one-base-change" target="_blank" rel="noopener">
-              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-              Proof
-            </a>
+        </article>
+
+        <article class="paper">
+          <div class="paper-main discovery-main">
+            <div class="discovery-info">
+              <h3 class="paper-title">Infinite family with ℤ/2ℤ torsion</h3>
+              <p class="discovery-date"><span class="discovery-rank-badge" aria-label="Rank at least 11">rk &ge; 11</span><time datetime="2026-11-03">November 3, 2026</time></p>
+            </div>
+            <div class="paper-links discovery-links">
+              <a href="https://github.com/crhillresearch/rank-ledger/tree/main/c2-rank-11-genus-one-family" target="_blank" rel="noopener">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                Proof
+              </a>
+            </div>
           </div>
-        </div>
-      </article>
-    </div>
+        </article>
+        <article class="paper">
+          <div class="paper-main discovery-main">
+            <div class="discovery-info">
+              <h3 class="paper-title">Infinite family with trivial torsion</h3>
+              <p class="discovery-date"><span class="discovery-rank-badge" aria-label="Rank at least 19">rk &ge; 19</span><time datetime="2026-10-22">October 22, 2026</time></p>
+            </div>
+            <div class="paper-links discovery-links">
+              <a href="https://github.com/crhillresearch/rank-ledger/tree/main/rank-19-genus-one-base-change" target="_blank" rel="noopener">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                Proof
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div><!--/unlocked-grid-->
 
   </section>
+</div>
 
-
-  <!-- about -->
-  <section id="about">
-    <h2 class="section-title">About</h2>
-
-    <div class="about-grid">
-      <div class="about-photo">
-        <img src="assets/c_hill.jpg" alt="Portrait of C. R. Hill" />
-      </div>
-      <div class="about-info">
-        <div class="about-head">
-          <h3>C. R. Hill</h3>
-          <div class="about-socials">
-            <a href="https://orcid.org/0009-0001-0580-3561" aria-label="ORCiD"><i class="fab fa-orcid"></i></a>
-            <a href="https://x.com/crhillresearch" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://github.com/crhillresearch" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-        <p>
+<footer class="site-footer" id="about">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-about">
+        <p class="footer-name">C. R. Hill</p>
+        <p class="footer-bio">
           Independent researcher working on relational primacy &mdash; the mathematics
           and physics that follow when relations, rather than objects, are taken as
           the primitive. My current work spans relational stability theory and the
           computational study of high-rank elliptic curves.
         </p>
+        <nav class="footer-socials" aria-label="C. R. Hill social links">
+          <a href="https://orcid.org/0009-0001-0580-3561" aria-label="ORCiD"><i class="fab fa-orcid" aria-hidden="true"></i></a>
+          <a href="https://x.com/crhillresearch" aria-label="X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="https://github.com/crhillresearch" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        </nav>
+      </div>
+      <div class="footer-photo">
+        <img src="assets/c_hill.jpg" alt="Portrait of C. R. Hill" />
       </div>
     </div>
-  </section>
-
-  <footer>hillaxiom.com / C. R. Hill &middot; 2026</footer>
-
-</div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 C. R. Hill</span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

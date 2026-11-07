@@ -11,22 +11,31 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/leaderboard.css">
 </head>
-<body>
+<body class="home-page">
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="site-header-main">
+      <span class="site-header-kicker">C. R. Hill / Independent research</span>
+      <h1><a class="site-header-brand" href="index.html">hillaxiom</a><span class="site-header-page-title"><span aria-hidden="true">⫽</span> Leaderboard</span></h1>
+    </div>
+    <nav class="site-header-nav" aria-label="Primary">
+      <a href="index.html#software">Software</a>
+      <a href="index.html#papers">Publications</a>
+      <a href="index.html#achievements">Achievements</a>
+      <div class="site-header-nav-secondary">
+        <a href="leaderboard.html" aria-current="page"><i class="fa-solid fa-star" aria-hidden="true"></i> Leaderboard</a>
+        <a href="resources.html"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Resources</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
 <div class="container">
-
-  <header>
-    <div class="masthead">
-      <a class="site-name" href="index.html">hillaxiom</a>
-    </div>
-  </header>
-
-  <section class="intro">
-    <h1>Leaderboard <span>&#11005;</span> <em>Torsion Rank Records</em></h1>
-    <p class="records-sub">
-      Three kinds of rank records for each rational torsion group: the best single curve, the best parametric family, and the best rank achieved by infinitely many curves.
-    </p>
-  </section>
+  <nav class="mobile-explore" aria-label="More pages">
+    <a href="leaderboard.html" aria-current="page"><i class="fa-solid fa-star" aria-hidden="true"></i> Leaderboard</a>
+    <a href="resources.html"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Resources</a>
+  </nav>
 
   <section id="records" aria-label="Elliptic-curve torsion rank records over Q and Q(t)">
 
@@ -68,12 +77,12 @@
         <div class="score-item score-zero" aria-label="Infinite Family: 0 of 15 records"><i class="fa-solid fa-infinity" aria-hidden="true"></i><span class="score-label">Infinite Family</span><strong>0<span>/15</span></strong></div>
         <div class="score-item" aria-label="Total: 5 of 45 records"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span class="score-label">Total</span><strong>5<span>/45</span></strong></div>
       </div>
-      <div class="records-scorebar score-owner" aria-label="Rank records credited to C. R. Hill">
-        <div class="score-profile" aria-label="C. R. Hill, tied for rank 17"><span class="score-photo-wrap"><img class="score-avatar" src="assets/c_hill.jpg" alt=""><span class="score-rank-badge" title="Tied at rank 17">#17</span></span><span>C. R. Hill</span></div>
+      <div class="records-scorebar score-owner" aria-label="Three rank records credited to C. R. Hill">
+        <div class="score-profile" aria-label="C. R. Hill, tied for rank 13"><span class="score-photo-wrap"><img class="score-avatar" src="assets/c_hill.jpg" alt=""><span class="score-rank-badge" title="Tied at rank 13">#13</span></span><span>C. R. Hill</span></div>
         <div class="score-item score-zero" aria-label="Individual Curve: 0 of 15 records"><i class="fa-solid fa-trophy" aria-hidden="true"></i><span class="score-label">Individual Curve</span><strong>0<span>/15</span></strong></div>
         <div class="score-item score-zero" aria-label="Parametric Family: 0 of 15 records"><i class="fa-solid fa-code-branch" aria-hidden="true"></i><span class="score-label">Parametric Family</span><strong>0<span>/15</span></strong></div>
-        <div class="score-item score-highlight" aria-label="Infinite Family: 2 of 15 records"><i class="fa-solid fa-infinity" aria-hidden="true"></i><span class="score-label">Infinite Family</span><strong>2<span>/15</span></strong></div>
-        <div class="score-item score-highlight" aria-label="Total: 2 of 45 records"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span class="score-label">Total</span><strong>2<span>/45</span></strong></div>
+        <div class="score-item" aria-label="Infinite Family: 3 of 15 records"><i class="fa-solid fa-infinity" aria-hidden="true"></i><span class="score-label">Infinite Family</span><strong>3<span>/15</span></strong></div>
+        <div class="score-item" aria-label="Total: 3 of 45 records"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><span class="score-label">Total</span><strong>3<span>/45</span></strong></div>
       </div>
     </div>
 
@@ -106,7 +115,7 @@
       <article class="record-card torsion-record-card">
         <div class="record-index"><i class="fa-solid fa-lock"></i></div>
         <div class="record-head"><h3>&#8484;/4&#8484;</h3><p>cyclic, order 4</p></div>
-        <div class="rank-block"><div class="rank-cell"><div class="rank-label"><i class="fa-solid fa-trophy rank-type-icon" aria-hidden="true"></i>Individual Curve</div><strong>&ge;13</strong><span class="rank-credit"><span>Elkies–Klagsbrun (2020); Li (2026)</span></span></div><div class="rank-cell"><div class="rank-label"><i class="fa-solid fa-code-branch rank-type-icon" aria-hidden="true"></i>Parametric Family</div><strong>&ge;6</strong><span class="rank-credit"><span>Dujella–Peral (2022, 2026)</span></span></div><div class="rank-cell"><div class="rank-label"><i class="fa-solid fa-infinity rank-type-icon" aria-hidden="true"></i>Infinite Family</div><strong>&ge;6</strong><span class="rank-credit"><span>Elkies (2007); Dujella–Peral (2021, 2022)</span></span></div></div>
+        <div class="rank-block"><div class="rank-cell"><div class="rank-label"><i class="fa-solid fa-trophy rank-type-icon" aria-hidden="true"></i>Individual Curve</div><strong>&ge;13</strong><span class="rank-credit"><span>Elkies–Klagsbrun (2020); Li (2026)</span></span></div><div class="rank-cell"><div class="rank-label"><i class="fa-solid fa-code-branch rank-type-icon" aria-hidden="true"></i>Parametric Family</div><strong>&ge;6</strong><span class="rank-credit"><span>Dujella–Peral (2022, 2026)</span></span></div><div class="rank-cell local-record"><div class="rank-label"><i class="fa-solid fa-infinity rank-type-icon" aria-hidden="true"></i>Infinite Family</div><strong>&ge;6</strong><span class="rank-credit"><span>Elkies (2007); Dujella–Peral (2021, 2022); <a class="local-holder" href="https://github.com/crhillresearch/rank-ledger/tree/main/c4-rank-6-s3-genus-one-family" target="_blank" rel="noopener noreferrer">Hill (2026)</a></span></span></div></div>
       </article>
 
       <!-- Z/5Z -->
@@ -215,12 +224,17 @@
 
   </section>
 
-  <footer class="leaderboard-footer">
-    <div>hillaxiom.com</div>
-    <p class="data-source-note">Torsion rank records are compiled from Andrej Dujella’s <a href="https://web.math.pmf.unizg.hr/~duje/tors/tors.html" target="_blank" rel="noopener noreferrer">elliptic-curve rank table <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a> and <a href="https://web.math.pmf.unizg.hr/~duje/tors/generic.html" target="_blank" rel="noopener noreferrer">generic torsion tables <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>.</p>
-  </footer>
-
 </div>
+
+<footer class="site-footer leaderboard-footer">
+  <div class="footer-inner">
+    <p class="data-source-note">Torsion rank records are compiled from Andrej Dujella’s <a href="https://web.math.pmf.unizg.hr/~duje/tors/tors.html" target="_blank" rel="noopener noreferrer">elliptic-curve rank table <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a> and <a href="https://web.math.pmf.unizg.hr/~duje/tors/generic.html" target="_blank" rel="noopener noreferrer">generic torsion tables <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>.</p>
+    <p class="record-color-key"><span><i class="color-swatch listed" aria-hidden="true"></i> Publicly acknowledged or listed record</span><span><i class="color-swatch local" aria-hidden="true"></i> Local result with published proof</span></p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 C. R. Hill</span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

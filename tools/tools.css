@@ -1,5 +1,3 @@
-.tools-intro { padding-bottom: 0.8rem; }
-.tools-intro p { color: var(--fg-soft); max-width: 38rem; }
 .tools-list { display: grid; gap: 0.65rem; padding-top: 1.4rem; }
 .tools-list .section-title { margin-bottom: 0.75rem; }
 .tool-card { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr) auto; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid var(--border); background: var(--bg-raised); color: var(--fg); }

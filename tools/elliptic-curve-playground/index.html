@@ -12,9 +12,31 @@
 <link rel="stylesheet" href="playground.css">
 <script src="playground.js" defer></script>
 </head>
-<body>
+<body class="home-page tools-page">
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="site-header-main">
+      <span class="site-header-kicker">C. R. Hill / Independent research</span>
+      <h1><a class="site-header-brand" href="../../index.html">hillaxiom</a><span class="site-header-page-title"><span aria-hidden="true">⫽</span> Tools</span></h1>
+    </div>
+    <nav class="site-header-nav" aria-label="Primary">
+      <a href="../../index.html#software">Software</a>
+      <a href="../../index.html#papers">Publications</a>
+      <a href="../../index.html#achievements">Achievements</a>
+      <div class="site-header-nav-secondary">
+        <a href="../../leaderboard.html"><i class="fa-solid fa-star" aria-hidden="true"></i> Leaderboard</a>
+        <a href="../" aria-current="page"><i class="fa-solid fa-wrench" aria-hidden="true"></i> Tools</a>
+        <a href="../../resources.html"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Resources</a>
+      </div>
+    </nav>
+  </div>
+</header>
 <div class="container">
-  <header><div class="masthead"><a class="site-name" href="../../index.html">hillaxiom</a></div></header>
+  <nav class="mobile-explore" aria-label="More pages">
+    <a href="../../leaderboard.html"><i class="fa-solid fa-star" aria-hidden="true"></i> Leaderboard</a>
+    <a href="../" aria-current="page"><i class="fa-solid fa-wrench" aria-hidden="true"></i> Tools</a>
+    <a href="../../resources.html"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Resources</a>
+  </nav>
   <a class="tool-breadcrumb" href="../"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> All tools</a>
   <section class="intro builder-intro">
     <h1>Elliptic Curve <em>Playground</em></h1>
@@ -55,7 +77,11 @@
       <div id="point-results" class="point-results" hidden></div>
     </div>
   </main>
-  <footer>hillaxiom.com</footer>
 </div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-bottom"><span>&copy; 2026 C. R. Hill</span></div>
+  </div>
+</footer>
 </body>
 </html>

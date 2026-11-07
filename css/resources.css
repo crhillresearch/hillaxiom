@@ -101,7 +101,7 @@
   text-decoration: none;
 }
 
-.reference-profiles { display: grid; gap: 0.7rem; }
+.reference-profiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; }
 .reference-profile {
   display: grid;
   grid-template-columns: 3.4rem minmax(0, 1fr);
@@ -135,6 +135,10 @@
 .reference-links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.5rem; }
 .reference-links a { color: var(--accent); font-family: var(--mono); font-size: 0.68rem; }
 .reference-links a i { font-size: 0.58rem; }
+
+@media (max-width: 680px) {
+  .reference-profiles { grid-template-columns: 1fr; }
+}
 
 @media (max-width: 560px) {
   .resource-section { margin-bottom: 0.6rem; padding-top: 1.2rem; padding-bottom: 1.2rem; }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Rational Families of Elliptic Curves with Trivial Torsion and Generic Rank at Least Eighteen · hillaxiom</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/paper.css">
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']], tags: 'ams' },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="paper-page" id="top">
+  <div class="container">
+    <header>
+      <div class="masthead"><a class="site-name" href="../index.html">hillaxiom</a></div>
+      <nav><a href="../pdf/two-rational-rank-18-families.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Download PDF</a></nav>
+    </header>
+    <main class="paper-content">
+      <h1 class="paper-doc-title">Two Rational Families of Elliptic Curves with<br>Trivial Torsion and Generic Rank at Least Eighteen</h1>
+      <p class="paper-doc-authors">C. R. Hill · November 11, 2026</p>
+
+      <div class="paper-abstract"><span class="abstract-label">Abstract.</span> I give two rational base changes of a rank-17 elliptic K3 fibration. Each produces an elliptic curve over \(\mathbb{Q}(u)\) with 18 independent sections and no rational torsion. The coordinates, height matrices, and Sage checker are in the companion Rank Ledger entry. I also compare the parent fibration with Elkies’s 2026 rank-17 example. The section-lattice determinants have a nonsquare ratio, so the two elliptic fibrations cannot be identified by a rational Möbius change of parameter. This ties the known generic rank bound of 18. It does not raise it.</div>
+
+      <h2 id="two-families">1. The two families</h2>
+      <p>Start with the elliptic K3 fibration \(E_t:y^2=x^3+A(t)x+B(t)\) from the Rank Ledger proof data <a href="#ref-3">[3]</a>. The file <code>data/parent-rank17.json</code> gives \(A\), \(B\) and 17 rational sections. Their exact Shioda height matrix has determinant \(1152\).</p>
+      <p>Here are the two maps. Write \(t=N_i(u)/D_i(u)\), with</p>
+      <div class="math display">\[\begin{aligned}
+        N_{4339}&amp;=-15122+4040296u-35861760u^2,\\
+        D_{4339}&amp;=-33609+11434038u-79420528u^2,\\
+        N_{36773}&amp;=-15122+4162140u+24546798u^2,\\
+        D_{36773}&amp;=-33609+13406884u+54997629u^2.
+      \end{aligned}\]</div>
+      <p>Clearing denominators gives polynomial models</p>
+      <div class="math display">\[E_i:\quad Y^2=X^3+D_i^8A(N_i/D_i)X+D_i^{12}B(N_i/D_i).\tag{1}\]</div>
+      <p>The files <code>data/cover-4339.json</code> and <code>data/cover-36773.json</code> give the coefficients and all 18 section coordinates for each curve. They also give conic identities \(q_i(N_i/D_i)=(W_i/D_i)^2\) for explicit polynomials \(q_i\), \(W_i\). So these are rational base changes. The genus-one pair cover used for the separate rank-19 result is not needed.</p>
+      <div class="theorem"><p><span class="theorem-label">Theorem 1.</span> For \(i=4339\) and \(i=36773\),</p>
+        <div class="math display">\[\operatorname{rank}E_i(\mathbb{Q}(u))\ge18,\qquad E_i(\mathbb{Q}(u))_{\mathrm{tors}}=0.\]</div>
+        <p>The exact generic ranks are not asserted.</p></div>
+
+      <h2 id="rank-calculation">2. The rank calculation</h2>
+      <p>The parent discriminant is squarefree of degree 24; each pullback discriminant is squarefree of degree 48. All singular fibers in these polynomial models are of type \(I_1\). There are no reducible-fiber corrections to the height pairing.</p>
+      <p>For a section \(P\), the checker calculates the height from its \(x\)-coordinate by</p>
+      <div class="math display">\[h(P)=\max\{\deg\operatorname{num}(x(P)),\ \deg\operatorname{den}(x(P))+2\chi\},\]</div>
+      <p>with \(\chi=2\) on the parent and \(\chi=4\) on either pullback. It checks the model hypotheses, places every listed point on its curve, and uses exact group addition to recover the pairings from heights of sums. No numerical rank estimate enters.</p>
+      <p>Call the resulting \(18\times18\) matrices \(G_{4339}\) and \(G_{36773}\). Both are positive definite, and both have determinant \(452984832\). The inherited \(17\times17\) block is twice the parent matrix, so its determinant is \(2^{17}\cdot1152=150994944\). The Schur complement of the extra section is</p>
+      <div class="math display">\[\frac{452984832}{150994944}=3.\]</div>
+      <p>That positive number is the point: the eighteenth section adds a new direction on each rational family. The exact matrices and Sage replay are in <a href="#ref-3">[3]</a>.</p>
+
+      <h2 id="no-torsion">3. No torsion</h2>
+      <p>At \(u=0\), both maps give \(t_0=15122/33609\). This is a smooth fiber. At three good primes the group orders are</p>
+      <div class="math display">\[\#E_{t_0}(\mathbb{F}_{31})=42,\qquad \#E_{t_0}(\mathbb{F}_{37})=46,\qquad \#E_{t_0}(\mathbb{F}_{59})=71.\]</div>
+      <p>Their gcd is 1, so the rational torsion on this fiber is trivial. Torsion specialization is injective at a smooth characteristic-zero fiber. This proves the torsion statement in Theorem 1. The checker recomputes the counts.</p>
+
+      <h2 id="elkies-comparison">4. The Elkies comparison</h2>
+      <p>Elkies gives a rank-17 elliptic K3 fibration in <a href="#ref-2">[2]</a>. The height matrix printed in his Section 2.1 has determinant \(948\). The 17-section matrix for the parent here has determinant \(1152\). Both matrices are checked exactly in the ledger entry.</p>
+      <div class="theorem"><p><span class="theorem-label">Theorem 2.</span> The two rank-17 elliptic fibrations are not related by a rational fractional-linear change of base parameter followed by an elliptic-curve isomorphism over the resulting function field.</p></div>
+      <div class="proof"><p><span class="proof-label">Proof.</span> Both sets of 17 independent sections have full rank: 17 is the applicable rank bound for these elliptic K3 fibrations over \(\mathbb{Q}(t)\). If the fibrations were isomorphic in the stated way, their canonical height lattices would agree. Determinants of two full-rank section sublattices of one lattice differ by a rational square, the square of the ratio of their indices. Here the ratio is</p>
+        <div class="math display">\[\frac{1152}{948}=\frac{96}{79},\]</div>
+        <p>which is not a square in \(\mathbb{Q}\). Contradiction. <span class="qed">∎</span></p></div>
+      <p>This distinguishes the elliptic fibrations with their chosen maps to \(\mathbb{P}^1\). It does not classify the underlying K3 surfaces or every possible relationship between their rank-18 pullbacks. Elkies’s earlier construction already gives the listed generic lower bound \(G(0)\ge18\) <a href="#ref-1">[1]</a>. These two families give another explicit route to that same bound.</p>
+
+      <h2 id="checking">5. Checking the calculation</h2>
+      <p>The Rank Ledger folder <code>generic-rank18-trivial-torsion/</code> supplies the proof note, checksum-pinned JSON files, and two scripts. Run <code>python3 verify_distinction.py</code> for the determinant comparison and <code>sage -python verify.py</code> for the full section, height, and torsion checks. With the author’s Miniforge installation, use its Sage environment Python for the latter. Both checks passed on 11 November 2026.</p>
+
+      <div class="references" id="references">
+        <h2>References</h2>
+        <p id="ref-1">[1] Andrej Dujella. “Infinite families of elliptic curves with high rank and prescribed torsion.” <a href="https://dujella.github.io/tors/generic.html">Dujella’s table</a>. Accessed November 2026.</p>
+        <p id="ref-2">[2] Noam D. Elkies. “An elliptic K3 surface \(X/\mathbb{Q}(t)\) with Mordell–Weil rank 17, I: Formulas for \(X\) and base changes of rank 18 and 19.” 2026.</p>
+        <p id="ref-3">[3] C. R. Hill. “Two generic-rank-at-least-18 families with trivial torsion.” <a href="https://github.com/crhillresearch/rank-ledger/tree/main/generic-rank18-trivial-torsion">Rank Ledger</a>, 2026.</p>
+      </div>
+    </main>
+    <footer class="paper-footer"><span>hillaxiom</span><a class="back-to-top" href="#top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a></footer>
+  </div>
+</body>
+</html>

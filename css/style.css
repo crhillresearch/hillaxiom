@@ -718,6 +718,16 @@ footer {
 .home-page .paper-group .paper:last-child,
 .home-page .unlocked-group .paper:last-child { border-bottom: 0; }
 .home-page #papers .section-title { margin-bottom: 0.4rem; }
+.home-page #papers .papers-index-link {
+  margin-left: auto;
+  color: var(--accent);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-transform: none;
+}
+.home-page #papers .papers-index-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.home-page #papers .papers-index-link i { margin-left: 0.25rem; font-size: 0.6rem; }
 .home-page #papers .publication {
   display: grid;
   grid-template-columns: 1.2rem minmax(0, 1fr) auto;

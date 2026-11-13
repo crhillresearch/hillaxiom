@@ -702,8 +702,10 @@ footer {
 .home-page .container > #papers,
 .home-page .container > #achievements {
   border-top: 1px solid var(--border);
-  padding-top: 2.2rem;
+  padding-top: 2.6rem;
 }
+.home-page .container > #software,
+.home-page .container > #papers { padding-bottom: 2.8rem; }
 .home-page .software-links { flex-wrap: wrap; gap: 0.3rem 1.1rem; }
 .home-page .unlocked-grid {
   display: grid;
@@ -713,11 +715,32 @@ footer {
 }
 .home-page .unlocked-column { display: flex; flex-direction: column; gap: 1.5rem; min-width: 0; }
 .home-page .unlocked-grid .unlocked-group { min-width: 0; margin-bottom: 0; }
+.home-page .achievements-list { margin-bottom: 0; }
+.home-page .achievement-title-row { display: flex; align-items: center; flex-wrap: wrap; gap: 0.45rem 0.65rem; }
+.home-page .achievement-type-icon { color: var(--dim); font-size: 0.9rem; }
+.home-page .paper:hover .achievement-type-icon { color: var(--accent); }
+.home-page .achievement-title-row .paper-title { margin: 0; }
+.home-page .achievement-tags { display: inline-flex; flex-wrap: wrap; gap: 0.3rem; }
+.home-page .achievement-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.13rem 0.42rem;
+  border: 1px solid var(--border);
+  color: var(--fg-soft);
+  font: 600 0.59rem/1.4 var(--mono);
+  letter-spacing: 0.035em;
+  white-space: nowrap;
+}
+.home-page .achievement-tag.record-tied { border-color: rgba(242, 193, 78, 0.45); background: rgba(242, 193, 78, 0.1); color: #f2c14e; }
+.home-page .achievement-tag.record-new { border-color: rgba(130, 210, 120, 0.45); background: rgba(130, 210, 120, 0.1); color: #82d278; }
+.home-page .achievement-tag.problem-solved { border-color: rgba(117, 191, 255, 0.45); background: rgba(117, 191, 255, 0.1); color: #75bfff; }
 .home-page .paper-group .paper,
 .home-page .unlocked-group .paper { border-bottom: 1px solid var(--border); }
 .home-page .paper-group .paper:last-child,
 .home-page .unlocked-group .paper:last-child { border-bottom: 0; }
-.home-page #papers .section-title { margin-bottom: 0.4rem; }
+.home-page #software .section-title,
+.home-page #papers .section-title,
+.home-page #achievements .section-title { margin-bottom: 1.4rem; }
 .home-page #papers .papers-index-link {
   margin-left: auto;
   color: var(--accent);

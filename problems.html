@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unsolved problems selected from Andrej Dujella's Open Problems on Diophantine m-tuples and Elliptic Curves.">
+<title>Open Problems &middot; hillaxiom</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.problems-hero { padding: 2.5rem 0 1.5rem; }
+.problems-hero h2 { font: 700 clamp(2rem,5vw,3.2rem)/1.1 "Space Grotesk",sans-serif; color:var(--fg-strong); margin-bottom:.8rem; }
+.problems-hero p { color:var(--fg-soft); max-width:720px; }
+.problem-tools { display:flex; gap:.8rem; flex-wrap:wrap; align-items:center; margin:1.2rem 0 1.8rem; }
+.problem-tools input { flex:1 1 250px; min-width:0; padding:.8rem 1rem; color:var(--fg); background:var(--bg-raised); border:1px solid var(--border); border-radius:3px; font:400 .95rem var(--sans); }
+.problem-tools input:focus { outline:2px solid var(--accent); outline-offset:2px; }
+.problem-count { color:var(--dim); font:500 .78rem var(--mono); }
+.problem-group { padding:1.6rem 0 1rem; }
+.problem-group h2 { font:700 1.25rem "Space Grotesk",sans-serif; color:var(--fg-strong); margin:0 0 .35rem; }
+.problem-group .group-note { color:var(--dim); font-size:.85rem; margin-bottom:1rem; }
+.problem-list { display:grid; gap:.75rem; }
+.problem-card { background:var(--bg-raised); border:1px solid var(--border); border-left:3px solid var(--accent); padding:1rem 1.15rem; }
+.problem-card h3 { color:var(--fg-strong); font:600 1rem/1.45 var(--serif); margin-bottom:.28rem; }
+.problem-card p { color:var(--fg-soft); font-size:.9rem; line-height:1.6; }
+.problem-id { color:var(--accent); font:700 .72rem var(--mono); letter-spacing:.03em; margin-right:.45rem; white-space:nowrap; }
+.problem-tag { display:inline-block; margin:.55rem .35rem 0 0; padding:.12rem .42rem; border:1px solid var(--border); color:var(--dim); font:500 .65rem var(--mono); }
+.problem-card.provisional { border-left-color:#e1ad55; }
+.problem-card.provisional .problem-id { color:#e1ad55; }
+.source-note { margin:1rem 0 3rem; padding:1rem 1.15rem; border:1px solid var(--border); color:var(--fg-soft); font-size:.85rem; }
+.problems-footer-note { color:var(--fg-soft); font-size:.85rem; line-height:1.65; }
+.problems-footer-note a { text-decoration:underline; }
+@media(max-width:600px){.problem-card{padding:.85rem}.problems-hero{padding-top:1.6rem}}
+</style>
+</head>
+<body class="home-page">
+<header class="site-header"><div class="site-header-inner"><div class="site-header-main">
+<span class="site-header-kicker">C. R. Hill / Independent research</span>
+<h1><a class="site-header-brand" href="index.html">hillaxiom</a><span class="site-header-page-title"><span aria-hidden="true">⫽</span> Open Problems</span></h1>
+</div><nav class="site-header-nav" aria-label="Primary"><a href="index.html#software">Software</a><a href="index.html#papers">Publications</a><a href="index.html#achievements">Achievements</a><div class="site-header-nav-secondary"><a href="leaderboard.html"><i class="fa-solid fa-star" aria-hidden="true"></i> Leaderboard</a><a href="tools/"><i class="fa-solid fa-wrench" aria-hidden="true"></i> Tools</a><a href="resources.html"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Resources</a></div></nav></div></header>
+<main class="container">
+<nav class="mobile-explore" aria-label="More pages"><a href="leaderboard.html"><i class="fa-solid fa-star" aria-hidden="true"></i> Leaderboard</a><a href="tools/"><i class="fa-solid fa-wrench" aria-hidden="true"></i> Tools</a><a href="resources.html"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Resources</a></nav>
+<section class="problems-hero"><h2>Unsolved problems</h2><p>A thematic index of questions still open in <a href="https://web.math.pmf.unizg.hr/~duje/"><strong>Andrej Dujella’s</strong></a> <em>Open Problems on Diophantine m-tuples and Elliptic Curves</em>. Browse by mathematical interest or search the problem statements. The source document is updated regularly; this page reflects the version dated November 13, 2026.</p>
+<div class="problem-tools"><input id="problem-search" type="search" placeholder="Search problems, terms, or IDs…" aria-label="Search problems"><span class="problem-count" id="problem-count" aria-live="polite"></span></div></section>
+
+<section class="problem-group" data-group><h2>High rank and elliptic curves</h2><p class="group-note">Rank records, torsion constraints, and ranks in families.</p><div class="problem-list">
+<article class="problem-card"><h3><span class="problem-id">2.1</span>Are ranks of elliptic curves over ℚ unbounded?</h3><p>Do elliptic curves over ℚ exist with arbitrarily large rank? The PDF reports a rank lower bound of 32 as the current record.</p><span class="problem-tag">rank bounds</span><span class="problem-tag">over ℚ</span></article>
+<article class="problem-card"><h3><span class="problem-id">3.5</span>Can a curve induced by a rational Diophantine triple have rank greater than 12?</h3><p>Several such curves of rank 12 are known.</p><span class="problem-tag">rank record</span><span class="problem-tag">triples</span></article>
+<article class="problem-card"><h3><span class="problem-id">3.6</span>Can a family induced by rational Diophantine triples have rank greater than 6 over ℚ(t)?</h3><p>Rank 6 is known for this kind of elliptic curve over the rational function field.</p><span class="problem-tag">families</span><span class="problem-tag">function fields</span></article>
+<article class="problem-card"><h3><span class="problem-id">3.10</span>Can a curve induced by a rational Diophantine quadruple have rank greater than 10?</h3><p>A rank 11 example has been proposed as a solution, conditional on an auxiliary curve having positive rank. The PDF notes that the unconditional argument relies on a proposed converse theorem not yet independently established.</p><span class="problem-tag">rank record</span><span class="problem-tag">proposed solution</span></article>
+<article class="problem-card"><h3><span class="problem-id">2.2</span>Can ℚ-torsion ℤ/2ℤ × ℤ/8ℤ occur with rank 4?</h3><p>Rank 3 examples are known.</p><span class="problem-tag">torsion</span><span class="problem-tag">rank 4</span></article>
+<article class="problem-card"><h3><span class="problem-id">2.3</span>Are there infinitely many curves with specified torsion and rank at least 2?</h3><p>For torsion ℤ/2ℤ × ℤ/8ℤ, and separately for ℤ/9ℤ, ℤ/10ℤ, and ℤ/12ℤ, are there infinitely many elliptic curves over ℚ of rank at least 2?</p><span class="problem-tag">infinite families</span><span class="problem-tag">torsion</span></article>
+<article class="problem-card"><h3><span class="problem-id">2.4(b)</span>Are infinitely many curves with torsion ℤ/8ℤ of rank at least 4?</h3><p>Infinitely many rank-at-least-3 examples are known.</p><span class="problem-tag">infinite families</span><span class="problem-tag">rank 4</span></article>
+<article class="problem-card"><h3><span class="problem-id">2.5</span>What heuristic predicts rank parity in the known high-rank torsion families?</h3><p>Seek a heuristic for parity distributions among known rank-at-least-3 families with torsion ℤ/2ℤ × ℤ/6ℤ and, respectively, ℤ/8ℤ.</p><span class="problem-tag">rank parity</span><span class="problem-tag">heuristics</span></article>
+<article class="problem-card"><h3><span class="problem-id">2.6(b)</span>Are infinitely many curves with torsion ℤ/6ℤ of rank at least 6?</h3><p>Infinitely many examples of rank at least 5 are known.</p><span class="problem-tag">infinite families</span><span class="problem-tag">rank 6</span></article>
+<article class="problem-card"><h3><span class="problem-id">2.7</span>Is there a genus-one-parametrized family with torsion ℤ/4ℤ and rank at least 7?</h3><p>A curve over ℚ(t) with this torsion and rank 6 is known.</p><span class="problem-tag">families</span><span class="problem-tag">rank 7</span></article>
+<article class="problem-card"><h3><span class="problem-id">2.8</span>Can quadratic-field torsion ℤ/13ℤ, ℤ/15ℤ, or ℤ/18ℤ occur with rank at least 3?</h3><p>For each of these three admissible torsion groups, find an elliptic curve over a quadratic field with rank at least 3.</p><span class="problem-tag">quadratic fields</span><span class="problem-tag">torsion</span></article>
+<article class="problem-card"><h3><span class="problem-id">3.7</span>Are infinitely many rank-zero curves induced by positive rational triples?</h3><p>At least one such elliptic curve is known.</p><span class="problem-tag">rank 0</span><span class="problem-tag">infinite families</span></article>
+<article class="problem-card"><h3><span class="problem-id">3.13</span>Is every positive-rank curve with torsion ℤ/2ℤ × ℤ/6ℤ induced by a rational triple?</h3><p>Equivalently, does there exist a positive-rank curve with this torsion subgroup that is not induced by a rational Diophantine triple?</p><span class="problem-tag">torsion</span><span class="problem-tag">classification</span></article>
+</div></section>
+
+<section class="problem-group" data-group><h2>Diophantine tuples and square conditions</h2><p class="group-note">Extensions, exceptional configurations, and simultaneous square conditions.</p><div class="problem-list">
+<article class="problem-card"><h3><span class="problem-id">1.3</span>Must a certain identity hold for every integer extension of a D(−1)-triple?</h3><p>Given a D(−1)-triple {a,b,c} and positive integer d such that ad+1, bd+1, cd+1 are squares, is (d+a+b−c)² = 4(ab−1)(cd+1)? It is known for several special families.</p><span class="problem-tag">D(−1)</span><span class="problem-tag">identity</span></article>
+<article class="problem-card"><h3><span class="problem-id">1.4</span>Is K₃,₃ a Diophantine graph?</h3><p>Do there exist six distinct positive integers a₁,a₂,a₃,b₁,b₂,b₃ such that every aᵢbⱼ+1 is a square?</p><span class="problem-tag">Diophantine graphs</span><span class="problem-tag">integers</span></article>
+<article class="problem-card"><h3><span class="problem-id">1.5</span>Can three linear factors yield a square for six positive integers?</h3><p>Do distinct positive integers a₁,a₂,a₃ exist for which (a₁x+1)(a₂x+1)(a₃x+1) is a square for at least six positive integer x? Five-solution examples are known.</p><span class="problem-tag">integer solutions</span><span class="problem-tag">square values</span></article>
+<article class="problem-card"><h3><span class="problem-id">1.15</span>Does a strong rational Diophantine quadruple exist?</h3><p>Can four nonzero rationals aᵢ be chosen so that every aᵢaⱼ+1, including the diagonal cases, is a square?</p><span class="problem-tag">rational tuples</span><span class="problem-tag">strong tuples</span></article>
+<article class="problem-card"><h3><span class="problem-id">3.1</span>Is there a rational Diophantine sextuple with at least two integer elements?</h3><p>Sextuples with one integer element are known.</p><span class="problem-tag">sextuples</span><span class="problem-tag">integral elements</span></article>
+<article class="problem-card"><h3><span class="problem-id">3.2</span>Does a rational Diophantine septuple exist?</h3><p>Find seven distinct rationals for which each pairwise product plus one is a square.</p><span class="problem-tag">septuples</span><span class="problem-tag">rational tuples</span></article>
+<article class="problem-card"><h3><span class="problem-id">3.4</span>Can one give an explicit absolute bound for rational Diophantine tuple size?</h3><p>Assume plausible conjectures and seek a numerical bound. Lang’s conjecture implies a bound but not an effective numerical one in the requested form.</p><span class="problem-tag">bounds</span><span class="problem-tag">rational tuples</span></article>
+<article class="problem-card"><h3><span class="problem-id">3.11</span>Can a rational Diophantine sextuple contain a strong triple?</h3><p>Sextuples containing a strong pair are known in infinite families.</p><span class="problem-tag">sextuples</span><span class="problem-tag">strong tuples</span></article>
+<article class="problem-card"><h3><span class="problem-id">3.12</span>Are there infinitely many pairs of sextuples sharing a triple with square denominators?</h3><p>All elements in both sextuples must have perfect-square denominators in lowest terms. Two pairs are known.</p><span class="problem-tag">sextuples</span><span class="problem-tag">denominators</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.16</span>Is there a rational Diophantine quintuple whose elements are all squares?</h3><p>Seek five rational squares whose pairwise products plus one are squares.</p><span class="problem-tag">quintuples</span><span class="problem-tag">squares</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.18</span>Is (5,7,24) the only integer triple satisfying the stated five square conditions?</h3><p>For 1&lt;a&lt;b&lt;c, require c+1, ab+1, ac+1, bc+1, and abc+1 all to be squares.</p><span class="problem-tag">integer triples</span><span class="problem-tag">square conditions</span></article>
+</div></section>
+
+<section class="problem-group" data-group><h2>Diophantine m-tuples: bounds, existence, and arithmetic</h2><p class="group-note">Questions about D(n)-sets, larger tuples, and simultaneous D(n) properties.</p><div class="problem-list">
+<article class="problem-card"><h3><span class="problem-id">1.6</span>Can one prove an unconditional absolute bound for perfect-power pair sets?</h3><p>Bound the size of a set of positive integers where every pairwise product of distinct elements is one less than a perfect power. The result is known assuming abc.</p><span class="problem-tag">perfect powers</span><span class="problem-tag">abc</span></article>
+<article class="problem-card"><h3><span class="problem-id">1.7(d)</span>Is every D(n)-quadruple finite in number when n is not a square?</h3><p>The PDF’s asymptotic questions for pairs and triples and its square-n quadruple question are marked solved; this non-square case remains open.</p><span class="problem-tag">counting</span><span class="problem-tag">D(n)</span></article>
+<article class="problem-card"><h3><span class="problem-id">1.8</span>Which z in ℤ[√−2] admit a D(z)-quadruple?</h3><p>Characterize the ring elements for which four elements have pairwise products plus z equal to squares; partial results are known.</p><span class="problem-tag">quadratic rings</span><span class="problem-tag">classification</span></article>
+<article class="problem-card"><h3><span class="problem-id">1.9</span>How does D(n)-quadruple existence relate to differences of squares in rings?</h3><p>Formulate a conjecture covering arbitrary commutative rings with unity and agreeing with known examples and theorems.</p><span class="problem-tag">commutative rings</span><span class="problem-tag">conjecture</span></article>
+<article class="problem-card"><h3><span class="problem-id">1.11</span>Can an imaginary quadratic integer ring contain a D(1)-quintuple?</h3><p>Every such D(1)-tuple has at most five elements, so the remaining question is whether the upper bound is attained.</p><span class="problem-tag">quadratic fields</span><span class="problem-tag">quintuples</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.1</span>Do D(n)-quadruples exist for n = −3, 3, 5, 8, 12, or 20?</h3><p>Determine existence separately for each listed value of n.</p><span class="problem-tag">existence</span><span class="problem-tag">D(n)</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.2</span>Are there only finitely many n with at most two D(n)-quadruples?</h3><p>Consider integer n not congruent to 2 modulo 4.</p><span class="problem-tag">counting</span><span class="problem-tag">D(n)</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.3(a)</span>Are there other polynomial D((4k−1)(4k+1))-quadruples?</h3><p>Exclude those obtained from the two known polynomial D(4k+3)-quadruples.</p><span class="problem-tag">polynomial tuples</span><span class="problem-tag">D(n)</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.3(b)</span>Can a specified prime-constrained n have more than two D(n)-quadruples?</h3><p>Here n=(4k−1)(4k+1), with the seven associated numbers listed in the source all prime.</p><span class="problem-tag">prime values</span><span class="problem-tag">D(n)</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.4</span>Can D(n)-tuple size be bounded by c log log |n|?</h3><p>Prove such an upper bound for nonzero integer n with an absolute constant c.</p><span class="problem-tag">size bounds</span><span class="problem-tag">D(n)</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.5</span>Do third-power or fourth-power Diophantine quadruples exist?</h3><p>Determine existence for either exponent.</p><span class="problem-tag">perfect powers</span><span class="problem-tag">quadruples</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.10</span>Is there a rational D(q)-sextuple for nonsquare q?</h3><p>Find six rational elements whose pairwise products plus q are squares.</p><span class="problem-tag">sextuples</span><span class="problem-tag">rational tuples</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.11</span>Can an integer D(n)-sextuple have all elements odd?</h3><p>Odd-element D(n)-quintuples are known.</p><span class="problem-tag">sextuples</span><span class="problem-tag">parity</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.12</span>Are there infinitely many triples that are also D(nᵢ)-triples for 1&lt;n₂&lt;n₃&lt;n₄?</h3><p>Several examples are known; the question asks whether there are infinitely many such triples.</p><span class="problem-tag">simultaneous D(n)</span><span class="problem-tag">infinite families</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.13(b)</span>How does the smallest shared D(n) parameter grow with the number of parameters?</h3><p>For n₁(k), the least absolute nonzero integer among a set of k values for which one fixed triple is D(n) for every value, describe asymptotic behavior under plausible conjectures.</p><span class="problem-tag">asymptotics</span><span class="problem-tag">D(n)</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.14</span>Can one four-element set be D(n)-quadruple for three distinct n?</h3><p>All four elements must be nonzero integers.</p><span class="problem-tag">simultaneous D(n)</span><span class="problem-tag">quadruples</span></article>
+<article class="problem-card"><h3><span class="problem-id">5.15</span>Can one five-element set be D(n)-quintuple for two distinct n?</h3><p>All five elements must be nonzero integers.</p><span class="problem-tag">simultaneous D(n)</span><span class="problem-tag">quintuples</span></article>
+</div></section>
+
+<section class="problem-group" data-group><h2>Pell equations and integer points</h2><p class="group-note">Integral solutions, regularity, and arithmetic structure.</p><div class="problem-list">
+<article class="problem-card"><h3><span class="problem-id">4.1</span>Does a Pell-type equation have at most one small positive solution?</h3><p>For k≥2, does x²−(k²+1)y²=k² have at most one solution with 0&lt;y&lt;k−1 and x&gt;0? It is proved for several infinite classes and for odd k with at most three prime divisors.</p><span class="problem-tag">Pell equations</span><span class="problem-tag">uniqueness</span></article>
+<article class="problem-card"><h3><span class="problem-id">4.2</span>Can another parameter yield more than four fundamental solutions?</h3><p>For x²−(k²−1)y²=2−k², is there a positive k other than 33539 with more than four fundamental solutions?</p><span class="problem-tag">Pell equations</span><span class="problem-tag">solutions</span></article>
+<article class="problem-card"><h3><span class="problem-id">4.5</span>Can all entries of a Diophantine quadruple be congruent modulo k≥3?</h3><p>Determine whether a quadruple can satisfy a≡b≡c≡d (mod k).</p><span class="problem-tag">congruences</span><span class="problem-tag">quadruples</span></article>
+<article class="problem-card"><h3><span class="problem-id">4.6</span>Are all Diophantine quadruples regular?</h3><p>Only finitely many irregular quadruples can exist, with explicit bounds on their larger entries; the conjecture is reduced to a finite problem.</p><span class="problem-tag">regularity</span><span class="problem-tag">quadruples</span></article>
+<article class="problem-card"><h3><span class="problem-id">4.7</span>Are all D(4)-quadruples regular?</h3><p>This is closely linked to the regularity question for ordinary Diophantine quadruples.</p><span class="problem-tag">regularity</span><span class="problem-tag">D(4)</span></article>
+<article class="problem-card"><h3><span class="problem-id">4.9</span>Are the listed points all integer points on this elliptic curve family?</h3><p>For k≥3, determine whether the only integral points on y²=((k−1)x+1)((k+1)x+1)(4kx+1) are (0,±1) and (16k³−4k, ±(128k⁶−112k⁴+20k²−1)). Known for k≤5000 and some additional cases.</p><span class="problem-tag">integer points</span><span class="problem-tag">elliptic curves</span></article>
+</div></section>
+
+</main>
+<footer class="site-footer"><div class="footer-inner"><p class="problems-footer-note">This page includes open subparts of partially solved numbered problems, retains questions with known special cases, and flags Problem 3.10’s proposed result because its unconditional step is not settled in the source. Items marked solved in the PDF are excluded. Grouping is editorial. <a href="https://web.math.pmf.unizg.hr/~duje/pdf/open2.pdf">Read the source PDF</a>.</p><div class="footer-bottom"><span>&copy; 2026 C. R. Hill</span></div></div></footer>
+<script>
+const input=document.getElementById('problem-search');
+const cards=[...document.querySelectorAll('.problem-card')];
+function update(){const q=input.value.trim().toLocaleLowerCase();let shown=0;for(const card of cards){const match=card.textContent.toLocaleLowerCase().includes(q);card.hidden=!match;if(match)shown++;}for(const group of document.querySelectorAll('[data-group]'))group.hidden=!group.querySelector('.problem-card:not([hidden])');document.getElementById('problem-count').textContent=`${shown} of ${cards.length} entries`;}
+input.addEventListener('input',update);update();
+</script>
+</body>
+</html>
